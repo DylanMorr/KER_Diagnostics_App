@@ -1,4 +1,4 @@
-# ker_diagnostics_app
+# KER Diagnostics App
 
 A new Flutter project.
 
