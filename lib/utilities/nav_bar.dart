@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:ker_diagnostics_app/screens/account_page.dart';
 import 'package:ker_diagnostics_app/screens/contact_page.dart';
 import 'package:ker_diagnostics_app/screens/diagnostics_page.dart';
 import 'package:ker_diagnostics_app/screens/home_page.dart';
@@ -20,6 +21,7 @@ class _BotNavBarState extends State<BotNavBar> {
     HomePage(),
     DiagnosticPage(),
     ContactPage(),
+    AccountPage()
   ];
 
   // method to track when bar is tapped
@@ -88,6 +90,10 @@ class _BotNavBarState extends State<BotNavBar> {
                 GButton(
                   icon: Icons.call,
                   text: 'Contact',
+                ),
+                GButton(
+                  icon: Icons.account_circle,
+                  text: 'Account',
                 ),
               ],
               // set the selected index to the variable _selectedIndex

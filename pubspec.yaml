@@ -36,6 +36,9 @@ dependencies:
   cupertino_icons: ^1.0.2
   google_nav_bar: ^5.0.6
   vector_math: 2.1.1
+  kommunicate_flutter: ^1.4.7
+  dialog_flowtter: ^0.3.3
+  carousel_slider: ^4.1.1
 
 dev_dependencies:
   flutter_test:
@@ -58,6 +61,7 @@ flutter:
     - assets/videos/
     - assets/fonts/
     - assets/logo/
+    - assets/dialog_flow_auth.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

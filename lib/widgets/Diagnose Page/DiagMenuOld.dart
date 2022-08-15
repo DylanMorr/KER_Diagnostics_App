@@ -2,8 +2,8 @@ import 'package:vector_math/vector_math.dart' show radians;
 import 'package:flutter/material.dart';
 import 'dart:math';
 
-class DiagMenu extends StatelessWidget {
-  const DiagMenu({Key? key}) : super(key: key);
+class DiagMenuOld extends StatelessWidget {
+  const DiagMenuOld({Key? key}) : super(key: key);
 
   // Main page return build
   @override
@@ -88,7 +88,7 @@ class RadialAnimation extends StatelessWidget {
                 top: 530,
                 // call build button and pass all params
                 child: _buildButton(
-                    0, "assets/images/cond_pump.jpg", "Condensor", 43),
+                    0, "assets/images/cond_pump.jpg", "Condensor", 43, "cond"),
               ),
               // Positioned Cooler button
               Positioned(
@@ -96,15 +96,15 @@ class RadialAnimation extends StatelessWidget {
                 top: 530,
                 // call build button and pass all params
                 child: _buildButton(
-                    45, "assets/images/cooler_rsw.jpg", "Cooler", 44),
+                    45, "assets/images/cooler_rsw.jpg", "Cooler", 44, "cool"),
               ),
               // Positioned Tank button
               Positioned(
                 // position from the top 530
                 top: 530,
                 // call build button and pass all params
-                child:
-                    _buildButton(90, "assets/images/antarctic.jpg", "Tank", 45),
+                child: _buildButton(
+                    90, "assets/images/antarctic.jpg", "Tank", 45, "tank"),
               ),
               // Positioned Inverter button
               Positioned(
@@ -112,38 +112,38 @@ class RadialAnimation extends StatelessWidget {
                 top: 530,
                 // call build button and pass all params
                 child: _buildButton(
-                    135, "assets/images/inverter.jpg", "Inverter", 39),
+                    135, "assets/images/inverter.jpg", "Inverter", 39, "inv"),
               ),
               // Positioned Panel button
               Positioned(
                 // position from the top 530
                 top: 530,
                 // call build button and pass all params
-                child:
-                    _buildButton(180, "assets/images/panel.JPG", "Panel", 33),
+                child: _buildButton(
+                    180, "assets/images/panel.JPG", "Panel", 33, "panel"),
               ),
               // Positioned Other button
               Positioned(
                 // position from the top 530
                 top: 530,
                 child: _buildButton(
-                    225, "assets/images/rsw_plant.jpg", "Other", 45),
+                    225, "assets/images/rsw_plant.jpg", "Other", 45, "other"),
               ),
               // Positioned Compressor button
               Positioned(
                 // position from the top 530
                 top: 530,
                 // call build button and pass all params
-                child: _buildButton(
-                    270, "assets/images/rsw_compressor.jpg", "Compressor", 38),
+                child: _buildButton(270, "assets/images/rsw_compressor.jpg",
+                    "Compressor", 38, "comp"),
               ),
               // Positioned Circ Pump button
               Positioned(
                 // position from the top 530
                 top: 530,
                 // call build button and pass all params
-                child: _buildButton(
-                    315, "assets/images/circ_pump.jpg", "Circ Pump", 45),
+                child: _buildButton(315, "assets/images/circ_pump.jpg",
+                    "Circ Pump", 45, "circ"),
               ),
               // Positioned button for closing menu
               Positioned(
@@ -188,9 +188,12 @@ class RadialAnimation extends StatelessWidget {
   }
 
   // function to build a button
-  _buildButton(double angle, String image, String label, double width) {
+  _buildButton(
+      double angle, String image, String label, double width, String type) {
     // declare radians using angle parameter
     final double rad = radians(angle);
+    // choice set to type behind each button
+    String choice = type;
     // return a transform
     return Transform(
         // pass a transform matrix and calculate the translation based on x, y value from center point of circle
@@ -238,8 +241,8 @@ class RadialAnimation extends StatelessWidget {
                 ),
                 // set background color to red
                 backgroundColor: Color.fromARGB(255, 255, 0, 0),
-                // on pressed close for now
-                onPressed: _close,
+                // on pressed call menu choice function and pass in choice
+                onPressed: () => _menuChoice(choice),
               ),
             )
           ],
@@ -256,5 +259,39 @@ class RadialAnimation extends StatelessWidget {
   _close() {
     // run animation in reverse
     controller.reverse();
+  }
+
+  // function to choose what aspect you have a problem with
+  _menuChoice(String type) {
+    String choice = type;
+
+    switch (choice) {
+      case "cond":
+        print("You have chosen Condenser");
+        break;
+      case "cool":
+        print("You have chosen Cooler");
+        break;
+      case "tank":
+        print("You have chosen Tank");
+        break;
+      case "inv":
+        print("You have chosen inverter");
+        break;
+      case "panel":
+        print("You have chosen Panel");
+        break;
+      case "other":
+        print("You have chosen Other");
+        break;
+      case "comp":
+        print("You have chosen Compressor");
+        break;
+      case "circ":
+        print("You have chosen Circ Pump");
+        break;
+      default:
+        _close();
+    }
   }
 }

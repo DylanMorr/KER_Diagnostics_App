@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:ker_diagnostics_app/widgets/ContactContent.dart';
+import 'package:ker_diagnostics_app/widgets/Contact%20Page/ContactContent.dart';
 
 class ContactPage extends StatefulWidget {
   @override
   State<ContactPage> createState() => _ContactPageState();
+
+  const ContactPage({Key? key}) : super(key: key);
 }
 
 class _ContactPageState extends State<ContactPage> {

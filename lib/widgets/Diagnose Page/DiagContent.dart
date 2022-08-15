@@ -4,7 +4,7 @@ import 'package:ker_diagnostics_app/utilities/text_styling.dart';
 class DiagContent extends StatelessWidget {
   const DiagContent({Key? key}) : super(key: key);
 
-  // Main diagnostic page conten build
+  // Main diagnostic page content build
   @override
   Widget build(BuildContext context) {
     // set the page title
@@ -13,7 +13,7 @@ class DiagContent extends StatelessWidget {
     return Container(
       child: ListView(
         // set the padding
-        padding: EdgeInsets.fromLTRB(0.0, 72.0, 0.0, 32.0),
+        padding: EdgeInsets.fromLTRB(0.0, 70.0, 0.0, 30.0),
         children: <Widget>[
           // container holding all content
           Container(
@@ -32,7 +32,7 @@ class DiagContent extends StatelessWidget {
                 ),
                 // space out content
                 SizedBox(
-                  height: 40,
+                  height: 30,
                 ),
                 // setup a container with text describing the diagnostic idea
                 Container(
@@ -65,29 +65,15 @@ class DiagContent extends StatelessWidget {
                 ),
                 // Space out content
                 SizedBox(
-                  height: 40,
+                  height: 30,
                 ),
                 // create another text widget with instructions on how to get started
                 Text(
-                  'To get started click the circle button below and select which part there appears to be a problem with below',
+                  'To get started chose from the menu below which part has a problem and you will be brought to our diagnostic chat bot which will guide you on how to fix your problem',
                   textScaleFactor: 1.1,
                   textAlign: TextAlign.center,
                   style: TextStyle(color: Colors.white),
                 ),
-                // Space out content
-                SizedBox(
-                  height: 20,
-                ),
-                // Add an image using a rotated box to rotate it 90 degrees
-                RotatedBox(
-                    // set quarter turn to 1 for 90 degrees to the right
-                    quarterTurns: 1,
-                    // set the child to the asset image and adjust width and height
-                    child: Image(
-                      image: AssetImage('assets/images/down_arrow.png'),
-                      width: 75,
-                      height: 200,
-                    )),
               ],
             ),
           ),

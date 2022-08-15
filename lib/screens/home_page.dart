@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:ker_diagnostics_app/widgets/HomeBackground.dart';
-import 'package:ker_diagnostics_app/widgets/HomeContent.dart';
-import 'package:ker_diagnostics_app/widgets/HomeGradient.dart';
+import 'package:ker_diagnostics_app/widgets/Home%20Page/HomeBackground.dart';
+import 'package:ker_diagnostics_app/widgets/Home%20Page/HomeContent.dart';
+import 'package:ker_diagnostics_app/widgets/Home%20Page/HomeGradient.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);

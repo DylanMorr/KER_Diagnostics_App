@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:ker_diagnostics_app/screens/contact_page.dart';
+import 'package:ker_diagnostics_app/screens/diagnostics_page.dart';
 import 'package:ker_diagnostics_app/utilities/text_styling.dart';
-import 'package:ker_diagnostics_app/widgets/app_summary.dart';
-import 'package:ker_diagnostics_app/widgets/separator.dart';
+import 'package:ker_diagnostics_app/widgets/Home%20Page/app_summary.dart';
+import 'package:ker_diagnostics_app/widgets/Home%20Page/separator.dart';
 
-class HomeContent extends StatelessWidget {
+class HomeContent extends StatefulWidget {
+  @override
+  State<HomeContent> createState() => _HomeContentState();
+
   const HomeContent({Key? key}) : super(key: key);
+}
 
+class _HomeContentState extends State<HomeContent> {
   // home page main content build
   @override
   Widget build(BuildContext context) {
@@ -62,6 +69,24 @@ class HomeContent extends StatelessWidget {
                       "grown into one of the leading project management and marine industry specialists providing innovative solutions " +
                       "to both onshore and offshore clients including: Marine, Pharmaceuticals, Food Processing, Gas and Oil Sectors worldwide.",
                   style: Style.commonText,
+                ),
+                GestureDetector(
+                  child: Text("Diagnose"),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        new MaterialPageRoute(
+                            builder: (context) => new DiagnosticPage()));
+                  },
+                ),
+                GestureDetector(
+                  child: Text("Contact Us"),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        new MaterialPageRoute(
+                            builder: (context) => new ContactPage()));
+                  },
                 ),
               ],
             ),
