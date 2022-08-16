@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 class DiagMenu extends StatelessWidget {
   @override
@@ -32,29 +33,29 @@ class _MenuSetupState extends State<MenuSetup> {
               runSpacing: 10,
               children: <Widget>[
                 // Compressor Button
-                _buildCardItem("assets/images/rsw_compressor.jpg", "Compressor",
-                    50, 5, "comp"),
+                _buildCardItem(context, "assets/images/rsw_compressor.jpg",
+                    "Compressor", 50, 5, "comp"),
                 // Circ Pump Button
-                _buildCardItem(
-                    "assets/images/circ_pump.jpg", "Circ Pump", 50, 5, "circ"),
+                _buildCardItem(context, "assets/images/circ_pump.jpg",
+                    "Circ Pump", 50, 5, "circ"),
                 // Condenser Button
-                _buildCardItem(
-                    "assets/images/cond_pump.jpg", "Condenser", 50, 5, "cond"),
+                _buildCardItem(context, "assets/images/cond_pump.jpg",
+                    "Condenser", 50, 5, "cond"),
                 // Cooler Button
-                _buildCardItem(
-                    "assets/images/cooler_rsw.jpg", "Cooler", 50, 10, "cool"),
+                _buildCardItem(context, "assets/images/cooler_rsw.jpg",
+                    "Cooler", 50, 10, "cool"),
                 // Inverter Button
-                _buildCardItem(
-                    "assets/images/inverter.jpg", "Inverter", 45, 10, "inv"),
+                _buildCardItem(context, "assets/images/inverter.jpg",
+                    "Inverter", 45, 10, "inv"),
                 // Panel Button
-                _buildCardItem(
-                    "assets/images/panel.JPG", "Panel", 35, 15, "panel"),
+                _buildCardItem(context, "assets/images/panel.JPG", "Panel", 35,
+                    15, "panel"),
                 // Tank Button
-                _buildCardItem(
-                    "assets/images/antarctic.jpg", "Tank", 50, 10, "tank"),
+                _buildCardItem(context, "assets/images/antarctic.jpg", "Tank",
+                    50, 10, "tank"),
                 // Other Button
-                _buildCardItem(
-                    "assets/images/rsw_plant.jpg", "Other", 50, 10, "other"),
+                _buildCardItem(context, "assets/images/rsw_plant.jpg", "Other",
+                    50, 10, "other"),
               ],
             ),
           ),
@@ -65,8 +66,8 @@ class _MenuSetupState extends State<MenuSetup> {
 }
 
 // method to build buttons
-_buildCardItem(
-    String image, String title, double width, double gap, String type) {
+_buildCardItem(BuildContext context, String image, String title, double width,
+    double gap, String type) {
   // setup a gesture detector on a card
   return GestureDetector(
     child: Card(
@@ -87,7 +88,7 @@ _buildCardItem(
             // return a list tile with an image and text
             ListTile(
               // printing type of button when tapped
-              onTap: () => {print(type)},
+              onTap: () => {botChatEvent(context)},
               contentPadding: EdgeInsets.only(left: 15),
               // gap is from params
               horizontalTitleGap: gap,
@@ -127,4 +128,8 @@ _buildCardItem(
       ),
     ),
   );
+}
+
+botChatEvent(BuildContext context) {
+  Navigator.pushNamed(context, "/BotScreen");
 }

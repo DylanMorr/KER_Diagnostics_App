@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ker_diagnostics_app/widgets/Diagnose%20Page/DiagContent.dart';
 import 'package:ker_diagnostics_app/widgets/Diagnose%20Page/DiagMenu.dart';
+import 'package:ker_diagnostics_app/widgets/Diagnose%20Page/diag_chat_bot.dart';
 import 'package:ker_diagnostics_app/widgets/testbot.dart';
 
 class DiagnosticPage extends StatelessWidget {
@@ -17,6 +18,7 @@ class DiagnosticPage extends StatelessWidget {
           // Return both the Content and the Menu widget
           children: <Widget>[DiagContent(), DiagMenu()],
           //children: <Widget>[BotTest()],
+          //children: <Widget>[DiagBot()],
         ),
       ),
     );

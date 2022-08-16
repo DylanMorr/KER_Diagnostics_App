@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 class Separator extends StatelessWidget {
   // Home page seperator widget for lines under title

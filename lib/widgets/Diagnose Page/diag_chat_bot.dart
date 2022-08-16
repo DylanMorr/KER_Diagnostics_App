@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kommunicate_flutter/kommunicate_flutter.dart';
+import 'package:sizer/sizer.dart';
 
 class DiagBot extends StatelessWidget {
   const DiagBot({Key? key}) : super(key: key);

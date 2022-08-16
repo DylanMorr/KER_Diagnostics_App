@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ker_diagnostics_app/utilities/text_styling.dart';
+import 'package:sizer/sizer.dart';
 
 class DiagContent extends StatelessWidget {
   const DiagContent({Key? key}) : super(key: key);

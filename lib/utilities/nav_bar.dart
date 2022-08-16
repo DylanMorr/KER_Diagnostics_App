@@ -4,17 +4,25 @@ import 'package:ker_diagnostics_app/screens/account_page.dart';
 import 'package:ker_diagnostics_app/screens/contact_page.dart';
 import 'package:ker_diagnostics_app/screens/diagnostics_page.dart';
 import 'package:ker_diagnostics_app/screens/home_page.dart';
+import 'package:sizer/sizer.dart';
 
 class BotNavBar extends StatefulWidget {
-  const BotNavBar({Key? key}) : super(key: key);
+  final int selectedIndex;
+  BotNavBar({Key? key, required this.selectedIndex}) : super(key: key);
 
   @override
   State<BotNavBar> createState() => _BotNavBarState();
 }
 
 class _BotNavBarState extends State<BotNavBar> {
-  // set the selected index to 0 so starting page is HomePage
-  int _selectedIndex = 0;
+  late int _selectedIndex;
+
+  @override
+  void initState() {
+    super.initState();
+    // set the selected index to 0 so starting page is HomePage
+    _selectedIndex = widget.selectedIndex;
+  }
 
   // Create a list of pages to navigate through
   final List<Widget> index = [
@@ -53,7 +61,7 @@ class _BotNavBarState extends State<BotNavBar> {
           // add a padding widget
           child: Padding(
             // setup padding
-            padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 14),
+            padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 14),
             // add the GNav which is a nav bar widget called Google Nav Bar
             child: GNav(
               // Set hover color to blue

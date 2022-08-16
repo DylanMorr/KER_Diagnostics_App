@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 class MessagesScreen extends StatefulWidget {
   // add a list of messages parameter
@@ -48,7 +49,7 @@ class _MessagesScreenState extends State<MessagesScreen> {
                     topLeft: Radius.circular(
                         widget.messages[index]['isUserMessage'] ? 20 : 0),
                   ),
-                  // set colors of text boxes
+                  // set colors of text boxes - // red is user, blue is bot
                   color: widget.messages[index]['isUserMessage']
                       ? Color.fromARGB(255, 255, 0, 0)
                       : Color.fromARGB(255, 0, 0, 255),

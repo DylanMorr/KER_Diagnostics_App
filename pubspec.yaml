@@ -39,6 +39,8 @@ dependencies:
   kommunicate_flutter: ^1.4.7
   dialog_flowtter: ^0.3.3
   carousel_slider: ^4.1.1
+  sizer: ^2.0.15
+  #responsive_framework: ^0.2.0
 
 dev_dependencies:
   flutter_test:

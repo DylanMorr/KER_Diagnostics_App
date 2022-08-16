@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ker_diagnostics_app/utilities/text_styling.dart';
+import 'package:sizer/sizer.dart';
 
 class AppSummary extends StatelessWidget {
   // Main App Summary Widget
@@ -78,7 +79,7 @@ class AppSummary extends StatelessWidget {
     // return a final container for the card
     return Container(
       // set margins
-      margin: const EdgeInsets.symmetric(
+      margin: EdgeInsets.symmetric(
         vertical: 16.0,
         horizontal: 24.0,
       ),

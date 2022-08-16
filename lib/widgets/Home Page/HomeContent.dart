@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:ker_diagnostics_app/screens/contact_page.dart';
 import 'package:ker_diagnostics_app/screens/diagnostics_page.dart';
+import 'package:ker_diagnostics_app/utilities/nav_bar.dart';
 import 'package:ker_diagnostics_app/utilities/text_styling.dart';
 import 'package:ker_diagnostics_app/widgets/Home%20Page/app_summary.dart';
 import 'package:ker_diagnostics_app/widgets/Home%20Page/separator.dart';
+import 'package:sizer/sizer.dart';
 
 class HomeContent extends StatefulWidget {
   @override
@@ -71,21 +73,25 @@ class _HomeContentState extends State<HomeContent> {
                   style: Style.commonText,
                 ),
                 GestureDetector(
-                  child: Text("Diagnose"),
+                  child: Text("Diagnose Link"),
                   onTap: () {
                     Navigator.push(
                         context,
-                        new MaterialPageRoute(
-                            builder: (context) => new DiagnosticPage()));
+                        MaterialPageRoute(
+                            builder: (context) => BotNavBar(
+                                  selectedIndex: 1,
+                                )));
                   },
                 ),
                 GestureDetector(
-                  child: Text("Contact Us"),
+                  child: Text("Contact Us Link"),
                   onTap: () {
                     Navigator.push(
                         context,
-                        new MaterialPageRoute(
-                            builder: (context) => new ContactPage()));
+                        MaterialPageRoute(
+                            builder: (context) => BotNavBar(
+                                  selectedIndex: 2,
+                                )));
                   },
                 ),
               ],

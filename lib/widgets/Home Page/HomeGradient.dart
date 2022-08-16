@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 class HomeGradient extends StatelessWidget {
   const HomeGradient({Key? key}) : super(key: key);
@@ -24,9 +25,9 @@ class HomeGradient extends StatelessWidget {
           // set stop points
           stops: [0.0, 0.2, 1.0],
           // set beginning offset
-          begin: const FractionalOffset(0.0, 0.1),
+          begin: FractionalOffset(0.0, 0.1),
           // set end offset
-          end: const FractionalOffset(0.0, 1.0),
+          end: FractionalOffset(0.0, 1.0),
         ),
       ),
     );
