@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ker_diagnostics_app/utilities/text_styling.dart';
-import 'package:sizer/sizer.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 class DiagContent extends StatelessWidget {
   const DiagContent({Key? key}) : super(key: key);
@@ -28,17 +27,59 @@ class DiagContent extends StatelessWidget {
                 // create a text widget with the title and align to the center
                 Text(
                   diagnosticTitle,
-                  style: Style.diagTitle,
-                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: ResponsiveValue(
+                      context,
+                      defaultValue: 26.0,
+                      valueWhen: const [
+                        Condition.smallerThan(
+                          name: MOBILE,
+                          value: 20.0,
+                        ),
+                        Condition.largerThan(
+                          name: TABLET,
+                          value: 28.0,
+                        )
+                      ],
+                    ).value,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
                 // space out content
                 SizedBox(
-                  height: 30,
+                  height: ResponsiveValue(
+                    context,
+                    defaultValue: 50.0,
+                    valueWhen: const [
+                      Condition.smallerThan(
+                        name: MOBILE,
+                        value: 60.0,
+                      ),
+                      Condition.largerThan(
+                        name: TABLET,
+                        value: 60.0,
+                      )
+                    ],
+                  ).value,
                 ),
                 // setup a container with text describing the diagnostic idea
                 Container(
                   // set width
-                  width: 280,
+                  width: ResponsiveValue(
+                    context,
+                    defaultValue: 330.0,
+                    valueWhen: const [
+                      Condition.smallerThan(
+                        name: MOBILE,
+                        value: 280.0,
+                      ),
+                      Condition.largerThan(
+                        name: TABLET,
+                        value: 280.0,
+                      )
+                    ],
+                  ).value,
                   // set padding
                   padding: EdgeInsets.all(6),
                   // setup a box decoration for border control and box shadow
@@ -58,7 +99,20 @@ class DiagContent extends StatelessWidget {
                   // set the child to be a text widget with information about the diagnostic page
                   child: Text(
                     'Here you can start diagnosing issues with your RSW plant and find a fix for the most common problems.',
-                    textScaleFactor: 1.1,
+                    textScaleFactor: ResponsiveValue(
+                      context,
+                      defaultValue: 1.4,
+                      valueWhen: const [
+                        Condition.smallerThan(
+                          name: MOBILE,
+                          value: 1.1,
+                        ),
+                        Condition.largerThan(
+                          name: TABLET,
+                          value: 1.5,
+                        )
+                      ],
+                    ).value,
                     style: TextStyle(
                         color: Colors.white, fontWeight: FontWeight.bold),
                     textAlign: TextAlign.center,
@@ -66,14 +120,41 @@ class DiagContent extends StatelessWidget {
                 ),
                 // Space out content
                 SizedBox(
-                  height: 30,
+                  height: ResponsiveValue(
+                    context,
+                    defaultValue: 50.0,
+                    valueWhen: const [
+                      Condition.smallerThan(
+                        name: MOBILE,
+                        value: 60.0,
+                      ),
+                      Condition.largerThan(
+                        name: TABLET,
+                        value: 60.0,
+                      )
+                    ],
+                  ).value,
                 ),
                 // create another text widget with instructions on how to get started
                 Text(
                   'To get started chose from the menu below which part has a problem and you will be brought to our diagnostic chat bot which will guide you on how to fix your problem',
-                  textScaleFactor: 1.1,
+                  textScaleFactor: ResponsiveValue(
+                    context,
+                    defaultValue: 1.3,
+                    valueWhen: const [
+                      Condition.smallerThan(
+                        name: MOBILE,
+                        value: 1.1,
+                      ),
+                      Condition.largerThan(
+                        name: TABLET,
+                        value: 1.4,
+                      )
+                    ],
+                  ).value,
                   textAlign: TextAlign.center,
-                  style: TextStyle(color: Colors.white),
+                  style: TextStyle(
+                      color: Colors.white, fontWeight: FontWeight.w700),
                 ),
               ],
             ),

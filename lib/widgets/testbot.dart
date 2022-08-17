@@ -1,7 +1,6 @@
 import 'package:dialog_flowtter/dialog_flowtter.dart';
 import 'package:flutter/material.dart';
 import 'package:ker_diagnostics_app/screens/Messages.dart';
-import 'package:sizer/sizer.dart';
 
 class BotTest extends StatefulWidget {
   const BotTest({Key? key}) : super(key: key);

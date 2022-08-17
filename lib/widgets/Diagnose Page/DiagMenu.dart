@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sizer/sizer.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 class DiagMenu extends StatelessWidget {
   @override
@@ -19,9 +19,23 @@ class MenuSetup extends StatefulWidget {
 class _MenuSetupState extends State<MenuSetup> {
   @override
   Widget build(BuildContext context) {
+    double spacer = ResponsiveValue(
+      context,
+      defaultValue: 20.0,
+      valueWhen: const [
+        Condition.smallerThan(
+          name: MOBILE,
+          value: 20.0,
+        ),
+        Condition.largerThan(
+          name: TABLET,
+          value: 30.0,
+        )
+      ],
+    ).value as double;
     // setup a container to hold all the buttons
     return Container(
-      padding: EdgeInsets.only(bottom: 10),
+      padding: EdgeInsets.only(bottom: 15),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
@@ -29,8 +43,8 @@ class _MenuSetupState extends State<MenuSetup> {
             // wrap all the buttons and set the spacings
             child: Wrap(
               direction: Axis.horizontal,
-              spacing: 10,
-              runSpacing: 10,
+              spacing: spacer,
+              runSpacing: spacer,
               children: <Widget>[
                 // Compressor Button
                 _buildCardItem(context, "assets/images/rsw_compressor.jpg",
@@ -79,8 +93,34 @@ _buildCardItem(BuildContext context, String image, String title, double width,
       elevation: 10,
       color: Color.fromARGB(255, 255, 0, 0),
       child: Container(
-        width: 170,
-        height: 80,
+        width: ResponsiveValue(
+          context,
+          defaultValue: 280.0,
+          valueWhen: const [
+            Condition.smallerThan(
+              name: MOBILE,
+              value: 170.0,
+            ),
+            Condition.largerThan(
+              name: TABLET,
+              value: 300.0,
+            )
+          ],
+        ).value,
+        height: ResponsiveValue(
+          context,
+          defaultValue: 120.0,
+          valueWhen: const [
+            Condition.smallerThan(
+              name: MOBILE,
+              value: 100.0,
+            ),
+            Condition.largerThan(
+              name: TABLET,
+              value: 140.0,
+            )
+          ],
+        ).value,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
@@ -115,7 +155,20 @@ _buildCardItem(BuildContext context, String image, String title, double width,
                 // title is passed in params
                 title,
                 // style the text and position
-                textScaleFactor: 0.9,
+                textScaleFactor: ResponsiveValue(
+                  context,
+                  defaultValue: 1.4,
+                  valueWhen: const [
+                    Condition.smallerThan(
+                      name: MOBILE,
+                      value: 0.9,
+                    ),
+                    Condition.largerThan(
+                      name: TABLET,
+                      value: 1.5,
+                    )
+                  ],
+                ).value,
                 textAlign: TextAlign.start,
                 style: TextStyle(
                   color: Colors.white,

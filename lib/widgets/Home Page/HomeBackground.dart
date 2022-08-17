@@ -1,6 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:sizer/sizer.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 class HomeBackground extends StatelessWidget {
   const HomeBackground({Key? key}) : super(key: key);
@@ -11,14 +11,40 @@ class HomeBackground extends StatelessWidget {
     // return a sized box for carousel
     return SizedBox(
       // set height and width
-      height: 335,
+      height: ResponsiveValue(
+        context,
+        defaultValue: 435.0,
+        valueWhen: const [
+          Condition.smallerThan(
+            name: MOBILE,
+            value: 335.0,
+          ),
+          Condition.largerThan(
+            name: TABLET,
+            value: 485.0,
+          )
+        ],
+      ).value,
       width: double.infinity,
       // set child as carousel slider
       child: CarouselSlider(
         // setup carousel options
         options: CarouselOptions(
           viewportFraction: 1,
-          height: 335,
+          height: ResponsiveValue(
+            context,
+            defaultValue: 435.0,
+            valueWhen: const [
+              Condition.smallerThan(
+                name: MOBILE,
+                value: 335.0,
+              ),
+              Condition.largerThan(
+                name: TABLET,
+                value: 485.0,
+              )
+            ],
+          ).value,
           // set autoplay to true and duration to 5 secs
           autoPlay: true,
           autoPlayInterval: Duration(seconds: 5),
@@ -35,7 +61,20 @@ class HomeBackground extends StatelessWidget {
           return Builder(builder: (BuildContext context) {
             return Container(
               // set height and width of image
-              height: 335,
+              height: ResponsiveValue(
+                context,
+                defaultValue: 435.0,
+                valueWhen: const [
+                  Condition.smallerThan(
+                    name: MOBILE,
+                    value: 335.0,
+                  ),
+                  Condition.largerThan(
+                    name: TABLET,
+                    value: 485.0,
+                  )
+                ],
+              ).value,
               width: double.infinity,
               // return image
               child: Image.asset(

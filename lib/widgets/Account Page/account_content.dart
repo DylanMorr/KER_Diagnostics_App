@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ker_diagnostics_app/utilities/text_styling.dart';
-import 'package:sizer/sizer.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 class AccountContent extends StatelessWidget {
   const AccountContent({Key? key}) : super(key: key);
@@ -9,7 +8,7 @@ class AccountContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // set the page title
-    final diagnosticTitle = "Welcome to your Account Page".toUpperCase();
+    final accountTitle = "Welcome to your Account Page".toUpperCase();
     // return the content in a container with a list view
     return Container(
       child: ListView(
@@ -27,16 +26,60 @@ class AccountContent extends StatelessWidget {
               children: <Widget>[
                 // create a text widget with the title and align to the center
                 Text(
-                  diagnosticTitle,
-                  style: Style.diagTitle,
-                  textAlign: TextAlign.center,
+                  accountTitle,
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: ResponsiveValue(
+                        context,
+                        defaultValue: 26.0,
+                        valueWhen: const [
+                          Condition.smallerThan(
+                            name: MOBILE,
+                            value: 20.0,
+                          ),
+                          Condition.largerThan(
+                            name: TABLET,
+                            value: 28.0,
+                          )
+                        ],
+                      ).value,
+                      fontWeight: FontWeight.bold),
                 ),
                 SizedBox(
-                  height: 50,
+                  height: ResponsiveValue(
+                    context,
+                    defaultValue: 80.0,
+                    valueWhen: const [
+                      Condition.smallerThan(
+                        name: MOBILE,
+                        value: 50.0,
+                      ),
+                      Condition.largerThan(
+                        name: TABLET,
+                        value: 90.0,
+                      )
+                    ],
+                  ).value,
                 ),
                 Text(
                   '--- Setup account page ---',
-                  style: Style.diagTitle,
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: ResponsiveValue(
+                        context,
+                        defaultValue: 20.0,
+                        valueWhen: const [
+                          Condition.smallerThan(
+                            name: MOBILE,
+                            value: 16.0,
+                          ),
+                          Condition.largerThan(
+                            name: TABLET,
+                            value: 22.0,
+                          )
+                        ],
+                      ).value,
+                      fontWeight: FontWeight.bold),
                   textAlign: TextAlign.center,
                 ),
               ],

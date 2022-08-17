@@ -4,7 +4,7 @@ import 'package:ker_diagnostics_app/screens/account_page.dart';
 import 'package:ker_diagnostics_app/screens/contact_page.dart';
 import 'package:ker_diagnostics_app/screens/diagnostics_page.dart';
 import 'package:ker_diagnostics_app/screens/home_page.dart';
-import 'package:sizer/sizer.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 class BotNavBar extends StatefulWidget {
   final int selectedIndex;
@@ -43,6 +43,34 @@ class _BotNavBarState extends State<BotNavBar> {
   // Main nav bar widget
   @override
   Widget build(BuildContext context) {
+    double horPad = ResponsiveValue(
+      context,
+      defaultValue: 50.0,
+      valueWhen: const [
+        Condition.smallerThan(
+          name: MOBILE,
+          value: 15.0,
+        ),
+        Condition.largerThan(
+          name: TABLET,
+          value: 70.0,
+        )
+      ],
+    ).value as double;
+    double verPad = ResponsiveValue(
+      context,
+      defaultValue: 20.0,
+      valueWhen: const [
+        Condition.smallerThan(
+          name: MOBILE,
+          value: 14.0,
+        ),
+        Condition.largerThan(
+          name: TABLET,
+          value: 30.0,
+        )
+      ],
+    ).value as double;
     return Scaffold(
       backgroundColor: Colors.white,
       // In the body tag using the center widget set the child to show which page the selected index is currently on
@@ -61,7 +89,7 @@ class _BotNavBarState extends State<BotNavBar> {
           // add a padding widget
           child: Padding(
             // setup padding
-            padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 14),
+            padding: EdgeInsets.symmetric(horizontal: horPad, vertical: verPad),
             // add the GNav which is a nav bar widget called Google Nav Bar
             child: GNav(
               // Set hover color to blue
@@ -74,10 +102,42 @@ class _BotNavBarState extends State<BotNavBar> {
               gap: 8,
               // Unselected icon color is white
               color: Colors.white,
+              // text styling
+              textStyle: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                fontSize: ResponsiveValue(
+                  context,
+                  defaultValue: 20.0,
+                  valueWhen: const [
+                    Condition.smallerThan(
+                      name: MOBILE,
+                      value: 14.0,
+                    ),
+                    Condition.largerThan(
+                      name: TABLET,
+                      value: 24.0,
+                    )
+                  ],
+                ).value,
+              ),
               // active color also white
               activeColor: Colors.white,
               // Set the icon size
-              iconSize: 24,
+              iconSize: ResponsiveValue(
+                context,
+                defaultValue: 32.0,
+                valueWhen: const [
+                  Condition.smallerThan(
+                    name: MOBILE,
+                    value: 24.0,
+                  ),
+                  Condition.largerThan(
+                    name: TABLET,
+                    value: 34.0,
+                  )
+                ],
+              ).value,
               // Set the selected tab background to be blue
               tabBackgroundColor: Color.fromARGB(255, 0, 0, 255),
               // set the padding on the tabs

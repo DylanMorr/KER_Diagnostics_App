@@ -1,11 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:ker_diagnostics_app/utilities/text_styling.dart';
-import 'package:sizer/sizer.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 class AppSummary extends StatelessWidget {
   // Main App Summary Widget
   @override
   Widget build(BuildContext context) {
+    double topMargin = ResponsiveValue(
+      context,
+      defaultValue: 240.0,
+      valueWhen: const [
+        Condition.smallerThan(
+          name: MOBILE,
+          value: 150.0,
+        ),
+        Condition.largerThan(
+          name: TABLET,
+          value: 150.0,
+        )
+      ],
+    ).value as double;
     // create a card content container
     final cardContent = Container(
       // set the margins
@@ -58,7 +72,7 @@ class AppSummary extends StatelessWidget {
           // set the height
           height: 154.0,
           // set the margins
-          margin: EdgeInsets.only(top: 150.0),
+          margin: EdgeInsets.only(top: topMargin),
           // setup a box decoration for shape, border control and box shadow
           decoration: BoxDecoration(
             color: Color.fromARGB(255, 0, 0, 255),

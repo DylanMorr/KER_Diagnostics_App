@@ -5,7 +5,6 @@ import 'package:ker_diagnostics_app/utilities/nav_bar.dart';
 import 'package:ker_diagnostics_app/utilities/text_styling.dart';
 import 'package:ker_diagnostics_app/widgets/Home%20Page/app_summary.dart';
 import 'package:ker_diagnostics_app/widgets/Home%20Page/separator.dart';
-import 'package:sizer/sizer.dart';
 
 class HomeContent extends StatefulWidget {
   @override

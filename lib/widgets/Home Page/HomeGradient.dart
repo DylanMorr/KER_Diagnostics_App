@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sizer/sizer.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 class HomeGradient extends StatelessWidget {
   const HomeGradient({Key? key}) : super(key: key);
@@ -7,12 +7,39 @@ class HomeGradient extends StatelessWidget {
   // home page gradient effect build
   @override
   Widget build(BuildContext context) {
+    double topMargin = ResponsiveValue(
+      context,
+      defaultValue: 330.0,
+      valueWhen: const [
+        Condition.smallerThan(
+          name: MOBILE,
+          value: 235.0,
+        ),
+        Condition.largerThan(
+          name: TABLET,
+          value: 390.0,
+        )
+      ],
+    ).value as double;
     // return a container
     return Container(
       // set margins of container
-      margin: EdgeInsets.only(top: 230.0),
+      margin: EdgeInsets.only(top: topMargin),
       // set the height of container
-      height: 360.0,
+      height: ResponsiveValue(
+        context,
+        defaultValue: 360.0,
+        valueWhen: const [
+          Condition.smallerThan(
+            name: MOBILE,
+            value: 360.0,
+          ),
+          Condition.largerThan(
+            name: TABLET,
+            value: 390.0,
+          )
+        ],
+      ).value,
       // use box decoration to add a linear gradient to the container
       decoration: BoxDecoration(
         gradient: LinearGradient(

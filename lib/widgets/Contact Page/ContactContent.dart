@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ker_diagnostics_app/utilities/text_styling.dart';
-import 'package:sizer/sizer.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 class ContactContent extends StatefulWidget {
   @override
@@ -35,24 +34,97 @@ class _ContactContentState extends State<ContactContent> {
                 // Title for page
                 Text(
                   contactTitle,
-                  style: Style.contactTitle,
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: ResponsiveValue(
+                        context,
+                        defaultValue: 26.0,
+                        valueWhen: const [
+                          Condition.smallerThan(
+                            name: MOBILE,
+                            value: 20.0,
+                          ),
+                          Condition.largerThan(
+                            name: TABLET,
+                            value: 28.0,
+                          )
+                        ],
+                      ).value,
+                      fontWeight: FontWeight.bold),
                 ),
                 // Space out content
                 SizedBox(
-                  height: 45,
+                  height: ResponsiveValue(
+                    context,
+                    defaultValue: 80.0,
+                    valueWhen: const [
+                      Condition.smallerThan(
+                        name: MOBILE,
+                        value: 60.0,
+                      ),
+                      Condition.largerThan(
+                        name: TABLET,
+                        value: 90.0,
+                      )
+                    ],
+                  ).value,
                 ),
                 // Text to guide user in page
                 Text(
                   "Get in touch with us with any question and we will get back to you ASAP",
                   textAlign: TextAlign.center,
-                  style: Style.commonTextBold,
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: ResponsiveValue(
+                        context,
+                        defaultValue: 20.0,
+                        valueWhen: const [
+                          Condition.smallerThan(
+                            name: MOBILE,
+                            value: 15.0,
+                          ),
+                          Condition.largerThan(
+                            name: TABLET,
+                            value: 22.0,
+                          )
+                        ],
+                      ).value,
+                      fontWeight: FontWeight.bold),
                 ),
                 // Space out content
-                SizedBox(height: 35),
+                SizedBox(
+                  height: ResponsiveValue(
+                    context,
+                    defaultValue: 80.0,
+                    valueWhen: const [
+                      Condition.smallerThan(
+                        name: MOBILE,
+                        value: 60.0,
+                      ),
+                      Condition.largerThan(
+                        name: TABLET,
+                        value: 90.0,
+                      )
+                    ],
+                  ).value,
+                ),
                 // Setup a container to display all Ker info
                 Container(
                     // Container sizing and padding
-                    width: 300,
+                    width: ResponsiveValue(
+                      context,
+                      defaultValue: 500.0,
+                      valueWhen: const [
+                        Condition.smallerThan(
+                          name: MOBILE,
+                          value: 300.0,
+                        ),
+                        Condition.largerThan(
+                          name: TABLET,
+                          value: 600.0,
+                        )
+                      ],
+                    ).value,
                     padding: EdgeInsets.all(10),
                     // Add box decorator for border control and shadow
                     decoration: BoxDecoration(
@@ -83,15 +155,72 @@ class _ContactContentState extends State<ContactContent> {
                           "Co. Donegal,\n" +
                           "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" +
                           "Ireland F94 XY45",
-                      style: Style.commonTextBlack,
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: ResponsiveValue(
+                            context,
+                            defaultValue: 20.0,
+                            valueWhen: const [
+                              Condition.smallerThan(
+                                name: MOBILE,
+                                value: 14.0,
+                              ),
+                              Condition.largerThan(
+                                name: TABLET,
+                                value: 22.0,
+                              )
+                            ],
+                          ).value,
+                          fontWeight: FontWeight.bold),
                     )),
                 // Space out content
-                SizedBox(height: 35),
+                SizedBox(
+                  height: ResponsiveValue(
+                    context,
+                    defaultValue: 80.0,
+                    valueWhen: const [
+                      Condition.smallerThan(
+                        name: MOBILE,
+                        value: 60.0,
+                      ),
+                      Condition.largerThan(
+                        name: TABLET,
+                        value: 90.0,
+                      )
+                    ],
+                  ).value,
+                ),
                 // Create a container to hold the enquiry form
                 Container(
                   // Container sizing and padding
-                  width: 400,
-                  height: 300,
+                  width: ResponsiveValue(
+                    context,
+                    defaultValue: 650.0,
+                    valueWhen: const [
+                      Condition.smallerThan(
+                        name: MOBILE,
+                        value: 400.0,
+                      ),
+                      Condition.largerThan(
+                        name: TABLET,
+                        value: 500.0,
+                      )
+                    ],
+                  ).value,
+                  height: ResponsiveValue(
+                    context,
+                    defaultValue: 400.0,
+                    valueWhen: const [
+                      Condition.smallerThan(
+                        name: MOBILE,
+                        value: 350.0,
+                      ),
+                      Condition.largerThan(
+                        name: TABLET,
+                        value: 500.0,
+                      )
+                    ],
+                  ).value,
                   padding: EdgeInsets.all(10),
                   // Box decorator for border control
                   decoration: BoxDecoration(
@@ -106,16 +235,57 @@ class _ContactContentState extends State<ContactContent> {
                       children: [
                         // Space heading down slightly
                         SizedBox(
-                          height: 12,
+                          height: ResponsiveValue(
+                            context,
+                            defaultValue: 30.0,
+                            valueWhen: const [
+                              Condition.smallerThan(
+                                name: MOBILE,
+                                value: 20.0,
+                              ),
+                              Condition.largerThan(
+                                name: TABLET,
+                                value: 40.0,
+                              )
+                            ],
+                          ).value,
                         ),
                         // Heading text field
                         Text(
                           'Enquiry Form',
-                          textScaleFactor: 1.5,
+                          textScaleFactor: ResponsiveValue(
+                            context,
+                            defaultValue: 1.8,
+                            valueWhen: const [
+                              Condition.smallerThan(
+                                name: MOBILE,
+                                value: 1.5,
+                              ),
+                              Condition.largerThan(
+                                name: TABLET,
+                                value: 2.0,
+                              )
+                            ],
+                          ).value,
                           style: TextStyle(color: Colors.white),
                         ),
                         // Space out content
-                        SizedBox(height: 12),
+                        SizedBox(
+                          height: ResponsiveValue(
+                            context,
+                            defaultValue: 30.0,
+                            valueWhen: const [
+                              Condition.smallerThan(
+                                name: MOBILE,
+                                value: 20.0,
+                              ),
+                              Condition.largerThan(
+                                name: TABLET,
+                                value: 40.0,
+                              )
+                            ],
+                          ).value,
+                        ),
                         // Setup a row widget so that the name and email form can be side by side
                         Row(
                           children: [
@@ -124,21 +294,53 @@ class _ContactContentState extends State<ContactContent> {
                               child: ListTile(
                                 // Name Form field
                                 subtitle: TextFormField(
-                                  style: TextStyle(color: Colors.white),
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: ResponsiveValue(
+                                      context,
+                                      defaultValue: 20.0,
+                                      valueWhen: const [
+                                        Condition.smallerThan(
+                                          name: MOBILE,
+                                          value: 16.0,
+                                        ),
+                                        Condition.largerThan(
+                                          name: TABLET,
+                                          value: 22.0,
+                                        )
+                                      ],
+                                    ).value,
+                                  ),
                                   // Setup input decoration for border control and hint text
-                                  decoration: const InputDecoration(
+                                  decoration: InputDecoration(
                                     border: UnderlineInputBorder(),
                                     enabledBorder: UnderlineInputBorder(
-                                      borderSide:
-                                          BorderSide(color: Colors.white),
+                                      borderSide: BorderSide(
+                                          color: Colors.white, width: 2),
                                     ),
                                     focusedBorder: UnderlineInputBorder(
                                       borderSide: BorderSide(
-                                          color:
-                                              Color.fromARGB(255, 255, 0, 0)),
+                                          color: Color.fromARGB(255, 255, 0, 0),
+                                          width: 2),
                                     ),
                                     hintText: 'Name',
-                                    hintStyle: TextStyle(color: Colors.white70),
+                                    hintStyle: TextStyle(
+                                      color: Colors.white70,
+                                      fontSize: ResponsiveValue(
+                                        context,
+                                        defaultValue: 20.0,
+                                        valueWhen: const [
+                                          Condition.smallerThan(
+                                            name: MOBILE,
+                                            value: 16.0,
+                                          ),
+                                          Condition.largerThan(
+                                            name: TABLET,
+                                            value: 22.0,
+                                          )
+                                        ],
+                                      ).value,
+                                    ),
                                   ),
                                   // valid form by checking if empty - if empty return string if not empty return null
                                   validator: (value) =>
@@ -155,28 +357,73 @@ class _ContactContentState extends State<ContactContent> {
                             ),
                             // Space out content
                             SizedBox(
-                              width: 5,
+                              width: ResponsiveValue(
+                                context,
+                                defaultValue: 10.0,
+                                valueWhen: const [
+                                  Condition.smallerThan(
+                                    name: MOBILE,
+                                    value: 5.0,
+                                  ),
+                                  Condition.largerThan(
+                                    name: TABLET,
+                                    value: 15.0,
+                                  )
+                                ],
+                              ).value,
                             ),
                             // Setup an expanded ListTile to house the form field
                             Expanded(
                               child: ListTile(
                                 // Email form field
                                 subtitle: TextFormField(
-                                  style: TextStyle(color: Colors.white),
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: ResponsiveValue(
+                                      context,
+                                      defaultValue: 20.0,
+                                      valueWhen: const [
+                                        Condition.smallerThan(
+                                          name: MOBILE,
+                                          value: 16.0,
+                                        ),
+                                        Condition.largerThan(
+                                          name: TABLET,
+                                          value: 22.0,
+                                        )
+                                      ],
+                                    ).value,
+                                  ),
                                   // Setup input decoration for border control and hint text
-                                  decoration: const InputDecoration(
+                                  decoration: InputDecoration(
                                     border: UnderlineInputBorder(),
                                     enabledBorder: UnderlineInputBorder(
-                                      borderSide:
-                                          BorderSide(color: Colors.white),
+                                      borderSide: BorderSide(
+                                          color: Colors.white, width: 2),
                                     ),
                                     focusedBorder: UnderlineInputBorder(
                                       borderSide: BorderSide(
-                                          color:
-                                              Color.fromARGB(255, 255, 0, 0)),
+                                          color: Color.fromARGB(255, 255, 0, 0),
+                                          width: 2),
                                     ),
                                     hintText: 'Email',
-                                    hintStyle: TextStyle(color: Colors.white70),
+                                    hintStyle: TextStyle(
+                                      color: Colors.white70,
+                                      fontSize: ResponsiveValue(
+                                        context,
+                                        defaultValue: 20.0,
+                                        valueWhen: const [
+                                          Condition.smallerThan(
+                                            name: MOBILE,
+                                            value: 16.0,
+                                          ),
+                                          Condition.largerThan(
+                                            name: TABLET,
+                                            value: 22.0,
+                                          )
+                                        ],
+                                      ).value,
+                                    ),
                                   ),
                                   // valid form by checking if empty - if empty return string if not empty return null
                                   validator: (value) =>
@@ -195,7 +442,20 @@ class _ContactContentState extends State<ContactContent> {
                         ),
                         // Space out content
                         SizedBox(
-                          height: 5,
+                          height: ResponsiveValue(
+                            context,
+                            defaultValue: 30.0,
+                            valueWhen: const [
+                              Condition.smallerThan(
+                                name: MOBILE,
+                                value: 10.0,
+                              ),
+                              Condition.largerThan(
+                                name: TABLET,
+                                value: 40.0,
+                              )
+                            ],
+                          ).value,
                         ),
                         // Setup a ListTile for the last form field
                         ListTile(
@@ -205,19 +465,53 @@ class _ContactContentState extends State<ContactContent> {
                             keyboardType: TextInputType.multiline,
                             // max lines shown at one time is 3
                             maxLines: 3,
-                            style: TextStyle(color: Colors.white),
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: ResponsiveValue(
+                                context,
+                                defaultValue: 20.0,
+                                valueWhen: const [
+                                  Condition.smallerThan(
+                                    name: MOBILE,
+                                    value: 16.0,
+                                  ),
+                                  Condition.largerThan(
+                                    name: TABLET,
+                                    value: 22.0,
+                                  )
+                                ],
+                              ).value,
+                            ),
                             // Setup input decoration for border control and hint text
-                            decoration: const InputDecoration(
+                            decoration: InputDecoration(
                               border: UnderlineInputBorder(),
                               enabledBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(color: Colors.white),
+                                borderSide:
+                                    BorderSide(color: Colors.white, width: 2),
                               ),
                               focusedBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
-                                    color: Color.fromARGB(255, 255, 0, 0)),
+                                    color: Color.fromARGB(255, 255, 0, 0),
+                                    width: 2),
                               ),
                               hintText: 'Message',
-                              hintStyle: TextStyle(color: Colors.white70),
+                              hintStyle: TextStyle(
+                                color: Colors.white70,
+                                fontSize: ResponsiveValue(
+                                  context,
+                                  defaultValue: 20.0,
+                                  valueWhen: const [
+                                    Condition.smallerThan(
+                                      name: MOBILE,
+                                      value: 16.0,
+                                    ),
+                                    Condition.largerThan(
+                                      name: TABLET,
+                                      value: 22.0,
+                                    )
+                                  ],
+                                ).value,
+                              ),
                             ),
                             // valid form by checking if empty - if empty return string if not empty return null
                             validator: (value) =>
@@ -235,15 +529,70 @@ class _ContactContentState extends State<ContactContent> {
                         Text(
                           error,
                           style: TextStyle(
-                              color: Color.fromARGB(255, 255, 0, 0),
-                              fontSize: 12.0),
+                            color: Color.fromARGB(255, 255, 0, 0),
+                            fontSize: ResponsiveValue(
+                              context,
+                              defaultValue: 16.0,
+                              valueWhen: const [
+                                Condition.smallerThan(
+                                  name: MOBILE,
+                                  value: 12.0,
+                                ),
+                                Condition.largerThan(
+                                  name: TABLET,
+                                  value: 18.0,
+                                )
+                              ],
+                            ).value,
+                          ),
                         ),
                         // Space out content
-                        SizedBox(height: 8),
+                        SizedBox(
+                          height: ResponsiveValue(
+                            context,
+                            defaultValue: 15.0,
+                            valueWhen: const [
+                              Condition.smallerThan(
+                                name: MOBILE,
+                                value: 20.0,
+                              ),
+                              Condition.largerThan(
+                                name: TABLET,
+                                value: 20.0,
+                              )
+                            ],
+                          ).value,
+                        ),
                         // create container for the elevated button to submit form
                         Container(
-                          height: 40,
-                          width: 150,
+                          height: ResponsiveValue(
+                            context,
+                            defaultValue: 50.0,
+                            valueWhen: const [
+                              Condition.smallerThan(
+                                name: MOBILE,
+                                value: 40.0,
+                              ),
+                              Condition.largerThan(
+                                name: TABLET,
+                                value: 60.0,
+                              )
+                            ],
+                          ).value,
+                          width: ResponsiveValue(
+                            context,
+                            defaultValue: 160.0,
+                            valueWhen: const [
+                              Condition.smallerThan(
+                                name: MOBILE,
+                                value: 150.0,
+                              ),
+                              Condition.largerThan(
+                                name: TABLET,
+                                value: 170.0,
+                              )
+                            ],
+                          ).value,
                           // Setup box decoration for border control
                           decoration: BoxDecoration(
                             border: Border.all(color: Colors.black, width: 2),
@@ -256,7 +605,23 @@ class _ContactContentState extends State<ContactContent> {
                             // Set the child to be a text widget with purpose of button
                             child: Text(
                               'Send Message',
-                              style: TextStyle(color: Colors.white),
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: ResponsiveValue(
+                                  context,
+                                  defaultValue: 18.0,
+                                  valueWhen: const [
+                                    Condition.smallerThan(
+                                      name: MOBILE,
+                                      value: 12.0,
+                                    ),
+                                    Condition.largerThan(
+                                      name: TABLET,
+                                      value: 20.0,
+                                    )
+                                  ],
+                                ).value,
+                              ),
                             ),
                             // On press send message to ker
                             onPressed: () async {

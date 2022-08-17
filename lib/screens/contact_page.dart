@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ker_diagnostics_app/test.dart';
 import 'package:ker_diagnostics_app/widgets/Contact%20Page/ContactContent.dart';
 
 class ContactPage extends StatefulWidget {
@@ -20,6 +21,7 @@ class _ContactPageState extends State<ContactPage> {
           children: <Widget>[
             // Return the ContactContent widget
             ContactContent(),
+            //testWidge()
           ],
         ),
       ),
