@@ -8,15 +8,15 @@ class AppSummary extends StatelessWidget {
   Widget build(BuildContext context) {
     double topMargin = ResponsiveValue(
       context,
-      defaultValue: 240.0,
+      defaultValue: 280.0,
       valueWhen: const [
         Condition.smallerThan(
           name: MOBILE,
-          value: 150.0,
+          value: 170.0,
         ),
         Condition.largerThan(
           name: TABLET,
-          value: 150.0,
+          value: 300.0,
         )
       ],
     ).value as double;
@@ -49,11 +49,11 @@ class AppSummary extends StatelessWidget {
           // Space out content
           SizedBox(height: 10.0),
           // add welcome text to card
-          Text('Welcome to KER Group', style: Style.titleText),
+          Text('Our business is to keep', style: Style.titleText),
           // Space out content
           SizedBox(height: 5.0),
           // add more text for app name
-          Text('App_Name', style: Style.titleText),
+          Text('your business running smoothly', style: Style.titleText),
         ],
       ),
     );
@@ -66,7 +66,7 @@ class AppSummary extends StatelessWidget {
         // create the container
         child: Container(
           // set the width
-          width: 260,
+          width: 300,
           // set the child to the cardContent container
           child: cardContent,
           // set the height
@@ -75,7 +75,7 @@ class AppSummary extends StatelessWidget {
           margin: EdgeInsets.only(top: topMargin),
           // setup a box decoration for shape, border control and box shadow
           decoration: BoxDecoration(
-            color: Color.fromARGB(255, 0, 0, 255),
+            color: Color.fromARGB(255, 0, 90, 172),
             shape: BoxShape.rectangle,
             borderRadius: BorderRadius.circular(20.0),
             boxShadow: <BoxShadow>[

@@ -82,7 +82,7 @@ class _BotNavBarState extends State<BotNavBar> {
       bottomNavigationBar: Container(
         // set the main color to red
         decoration: BoxDecoration(
-          color: Color.fromARGB(255, 255, 0, 0),
+          color: Color.fromARGB(255, 0, 90, 172),
         ),
         // Using a safearea widget to avoid intrusions and issues with padding
         child: SafeArea(
@@ -93,7 +93,7 @@ class _BotNavBarState extends State<BotNavBar> {
             // add the GNav which is a nav bar widget called Google Nav Bar
             child: GNav(
               // Set hover color to blue
-              hoverColor: Color.fromARGB(255, 0, 0, 255),
+              hoverColor: Color.fromARGB(255, 255, 255, 255),
               // Add easeOutExpo curve animation
               curve: Curves.easeOutExpo,
               // Set animation duration to 500 ms
@@ -104,7 +104,7 @@ class _BotNavBarState extends State<BotNavBar> {
               color: Colors.white,
               // text styling
               textStyle: TextStyle(
-                color: Colors.white,
+                color: Colors.black,
                 fontWeight: FontWeight.bold,
                 fontSize: ResponsiveValue(
                   context,
@@ -122,7 +122,7 @@ class _BotNavBarState extends State<BotNavBar> {
                 ).value,
               ),
               // active color also white
-              activeColor: Colors.white,
+              activeColor: Colors.black,
               // Set the icon size
               iconSize: ResponsiveValue(
                 context,
@@ -139,7 +139,7 @@ class _BotNavBarState extends State<BotNavBar> {
                 ],
               ).value,
               // Set the selected tab background to be blue
-              tabBackgroundColor: Color.fromARGB(255, 0, 0, 255),
+              tabBackgroundColor: Color.fromARGB(255, 255, 255, 255),
               // set the padding on the tabs
               padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
               // Setup the tabs

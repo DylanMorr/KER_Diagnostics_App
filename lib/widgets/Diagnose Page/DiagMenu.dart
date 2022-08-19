@@ -88,7 +88,7 @@ _buildCardItem(BuildContext context, String image, String title, double width,
       // set shape to rounded rectangle
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15.0),
-        side: BorderSide(color: Colors.white, width: 2.5),
+        side: BorderSide(color: Colors.black, width: 2.5),
       ),
       elevation: 10,
       color: Color.fromARGB(255, 255, 0, 0),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_framework.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ContactContent extends StatefulWidget {
   @override
@@ -35,7 +36,7 @@ class _ContactContentState extends State<ContactContent> {
                 Text(
                   contactTitle,
                   style: TextStyle(
-                      color: Colors.white,
+                      color: Colors.black,
                       fontSize: ResponsiveValue(
                         context,
                         defaultValue: 26.0,
@@ -74,7 +75,7 @@ class _ContactContentState extends State<ContactContent> {
                   "Get in touch with us with any question and we will get back to you ASAP",
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                      color: Colors.white,
+                      color: Colors.black,
                       fontSize: ResponsiveValue(
                         context,
                         defaultValue: 20.0,
@@ -139,39 +140,48 @@ class _ContactContentState extends State<ContactContent> {
                       ],
                     ),
                     // Set the child of the container to return text widgets with details
-                    child: Text(
-                      "Phone:" +
-                          "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" +
-                          "+35374 973 1525\n\n" +
-                          "Email:" +
-                          "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" +
-                          "info@ker.ie\n\n" +
-                          "Address:" +
-                          "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" +
-                          "St Catherines Road,\n" +
-                          "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" +
-                          "Killybegs,\n" +
-                          "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" +
-                          "Co. Donegal,\n" +
-                          "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" +
-                          "Ireland F94 XY45",
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: ResponsiveValue(
-                            context,
-                            defaultValue: 20.0,
-                            valueWhen: const [
-                              Condition.smallerThan(
-                                name: MOBILE,
-                                value: 14.0,
-                              ),
-                              Condition.largerThan(
-                                name: TABLET,
-                                value: 22.0,
-                              )
-                            ],
-                          ).value,
-                          fontWeight: FontWeight.bold),
+                    child: Column(
+                      children: [
+                        ElevatedButton(
+                            onPressed: () {
+                             // launch('+35374 973 1525');
+                            },
+                            child: Text('Tel')),
+                        Text(
+                          "Phone:" +
+                              "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" +
+                              "+35374 973 1525\n\n" +
+                              "Email:" +
+                              "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" +
+                              "info@ker.ie\n\n" +
+                              "Address:" +
+                              "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" +
+                              "St Catherines Road,\n" +
+                              "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" +
+                              "Killybegs,\n" +
+                              "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" +
+                              "Co. Donegal,\n" +
+                              "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" +
+                              "Ireland F94 XY45",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: ResponsiveValue(
+                                context,
+                                defaultValue: 20.0,
+                                valueWhen: const [
+                                  Condition.smallerThan(
+                                    name: MOBILE,
+                                    value: 14.0,
+                                  ),
+                                  Condition.largerThan(
+                                    name: TABLET,
+                                    value: 22.0,
+                                  )
+                                ],
+                              ).value,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ],
                     )),
                 // Space out content
                 SizedBox(
@@ -224,9 +234,9 @@ class _ContactContentState extends State<ContactContent> {
                   padding: EdgeInsets.all(10),
                   // Box decorator for border control
                   decoration: BoxDecoration(
-                    border: Border.all(color: Colors.white, width: 2),
-                    borderRadius: BorderRadius.circular(8),
-                  ),
+                      border: Border.all(color: Colors.black, width: 2),
+                      borderRadius: BorderRadius.circular(8),
+                      color: Color.fromARGB(255, 0, 0, 255)),
                   // setup a child form for enquiring
                   child: Form(
                     // set key to global key _key
@@ -595,7 +605,7 @@ class _ContactContentState extends State<ContactContent> {
                           ).value,
                           // Setup box decoration for border control
                           decoration: BoxDecoration(
-                            border: Border.all(color: Colors.black, width: 2),
+                            border: Border.all(color: Colors.white, width: 2),
                             borderRadius: BorderRadius.circular(6),
                           ),
                           // create the elevated button
@@ -613,7 +623,7 @@ class _ContactContentState extends State<ContactContent> {
                                   valueWhen: const [
                                     Condition.smallerThan(
                                       name: MOBILE,
-                                      value: 12.0,
+                                      value: 14.0,
                                     ),
                                     Condition.largerThan(
                                       name: TABLET,
@@ -640,4 +650,16 @@ class _ContactContentState extends State<ContactContent> {
       ),
     );
   }
+}
+
+_phoneWidge() {
+  TextButton(
+    style: ButtonStyle(
+      foregroundColor: MaterialStateProperty.all<Color>(Colors.blue),
+    ),
+    onPressed: () {
+      launch('+35374 973 1525');
+    },
+    child: Text('TextButton'),
+  );
 }

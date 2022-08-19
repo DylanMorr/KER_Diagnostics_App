@@ -8,7 +8,7 @@ class Style {
     fontSize: 9.0,
   );
   static final commonText = baseText.copyWith(
-      color: Colors.white, fontSize: 14.0, fontWeight: FontWeight.w400);
+      color: Colors.black, fontSize: 14.0, fontWeight: FontWeight.w400);
 
   static final commonTextBold = baseText.copyWith(
       color: Colors.white, fontSize: 15.0, fontWeight: FontWeight.bold);
@@ -26,5 +26,5 @@ class Style {
       color: Colors.white, fontSize: 19.0, fontWeight: FontWeight.bold);
 
   static final headerText = baseText.copyWith(
-      color: Colors.white, fontSize: 20.0, fontWeight: FontWeight.w400);
+      color: Colors.black, fontSize: 20.0, fontWeight: FontWeight.w400);
 }

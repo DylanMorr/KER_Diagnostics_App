@@ -28,7 +28,7 @@ class HomeGradient extends StatelessWidget {
       // set the height of container
       height: ResponsiveValue(
         context,
-        defaultValue: 360.0,
+        defaultValue: 400.0,
         valueWhen: const [
           Condition.smallerThan(
             name: MOBILE,
@@ -46,8 +46,8 @@ class HomeGradient extends StatelessWidget {
           // set the colors of the gradient
           colors: <Color>[
             Color.fromARGB(0, 0, 0, 0),
-            Color.fromARGB(255, 0, 0, 80),
-            Color.fromARGB(255, 0, 0, 255),
+            Color.fromARGB(255, 255, 255, 255),
+            Color.fromARGB(255, 255, 255, 255),
           ],
           // set stop points
           stops: [0.0, 0.2, 1.0],

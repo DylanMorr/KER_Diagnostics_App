@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ker_diagnostics_app/test.dart';
 import 'package:ker_diagnostics_app/widgets/Contact%20Page/ContactContent.dart';
 
 class ContactPage extends StatefulWidget {
@@ -16,12 +15,11 @@ class _ContactPageState extends State<ContactPage> {
     return Scaffold(
       body: Container(
         constraints: const BoxConstraints.expand(),
-        color: const Color.fromARGB(255, 0, 0, 255),
+        color: const Color.fromARGB(255, 255, 255, 255),
         child: Stack(
           children: <Widget>[
             // Return the ContactContent widget
             ContactContent(),
-            //testWidge()
           ],
         ),
       ),

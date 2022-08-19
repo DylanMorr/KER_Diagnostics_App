@@ -12,7 +12,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body: Container(
         constraints: const BoxConstraints.expand(),
-        color: const Color.fromARGB(255, 0, 0, 255),
+        color: const Color.fromARGB(255, 255, 255, 255),
         child: Stack(
           // Return the background, gradient and content widgets
           children: <Widget>[
