@@ -17,8 +17,6 @@ class _HomeContentState extends State<HomeContent> {
     // return a container with a list view
     return Container(
       child: ListView(
-        // turn off scroll physics
-        physics: NeverScrollableScrollPhysics(),
         // add paddings
         padding: EdgeInsets.fromLTRB(0.0, 72.0, 0.0, 32.0),
         children: <Widget>[
