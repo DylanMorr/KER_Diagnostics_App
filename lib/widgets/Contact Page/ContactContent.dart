@@ -25,6 +25,8 @@ class _ContactContentState extends State<ContactContent> {
     // Create a container to hold a ListView to display everything
     return Container(
       child: ListView(
+        // turn off scrolling
+        physics: NeverScrollableScrollPhysics(),
         padding: EdgeInsets.fromLTRB(0.0, 72.0, 0.0, 32.0),
         children: <Widget>[
           Container(
@@ -144,7 +146,7 @@ class _ContactContentState extends State<ContactContent> {
                       children: [
                         ElevatedButton(
                             onPressed: () {
-                             // launch('+35374 973 1525');
+                              // launch('+35374 973 1525');
                             },
                             child: Text('Tel')),
                         Text(

@@ -12,6 +12,8 @@ class AccountContent extends StatelessWidget {
     // return the content in a container with a list view
     return Container(
       child: ListView(
+        // turn off scrolling
+        physics: NeverScrollableScrollPhysics(),
         // set the padding
         padding: EdgeInsets.fromLTRB(0.0, 70.0, 0.0, 30.0),
         children: <Widget>[

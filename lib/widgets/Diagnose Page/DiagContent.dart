@@ -8,14 +8,45 @@ class DiagContent extends StatelessWidget {
   // Main diagnostic page content build
   @override
   Widget build(BuildContext context) {
+    double toolGuideSpacer = ResponsiveValue(
+      context,
+      defaultValue: 506.0,
+      valueWhen: const [
+        Condition.smallerThan(
+          name: MOBILE,
+          value: 170.0,
+        ),
+      ],
+    ).value as double;
+    double contactSpacer = ResponsiveValue(
+      context,
+      defaultValue: 411.0,
+      valueWhen: const [
+        Condition.smallerThan(
+          name: MOBILE,
+          value: 95.0,
+        ),
+      ],
+    ).value as double;
     // return the content in a container with a list view
     return Container(
       child: ListView(
+        // turn off scrolling
+        physics: NeverScrollableScrollPhysics(),
         // set the padding
         padding: EdgeInsets.fromLTRB(0.0, 70.0, 0.0, 30.0),
         children: <Widget>[
           SizedBox(
-            height: 555,
+            height: ResponsiveValue(
+              context,
+              defaultValue: 648.0,
+              valueWhen: const [
+                Condition.smallerThan(
+                  name: MOBILE,
+                  value: 555.0,
+                ),
+              ],
+            ).value,
           ),
           // create a container for all the text on the page
           Container(
@@ -28,12 +59,23 @@ class DiagContent extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Wrap(
-                  spacing: 170,
+                  spacing: toolGuideSpacer,
                   children: [
                     Text(
                       'Tool guide',
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: ResponsiveValue(
+                          context,
+                          defaultValue: 21.0,
+                          valueWhen: const [
+                            Condition.smallerThan(
+                              name: MOBILE,
+                              value: 18.0,
+                            ),
+                          ],
+                        ).value,
+                      ),
                     ),
                     Container(
                       margin: EdgeInsets.only(right: 15),
@@ -49,10 +91,19 @@ class DiagContent extends StatelessWidget {
                         style: ElevatedButton.styleFrom(primary: Colors.white),
                         // Set the child to be a text widget with purpose of button
                         child: Text(
-                          'View manual',
+                          'View Manual',
                           style: TextStyle(
                               color: Colors.black,
-                              fontSize: 14,
+                              fontSize: ResponsiveValue(
+                                context,
+                                defaultValue: 17.0,
+                                valueWhen: const [
+                                  Condition.smallerThan(
+                                    name: MOBILE,
+                                    value: 14.0,
+                                  ),
+                                ],
+                              ).value,
                               fontWeight: FontWeight.bold),
                         ),
                         // On press send message to ker
@@ -72,7 +123,16 @@ class DiagContent extends StatelessWidget {
                   'Having trouble using the app? \nUse this manual on the operations of the app',
                   style: TextStyle(
                     color: Colors.black,
-                    fontSize: 14,
+                    fontSize: ResponsiveValue(
+                      context,
+                      defaultValue: 16.0,
+                      valueWhen: const [
+                        Condition.smallerThan(
+                          name: MOBILE,
+                          value: 14.0,
+                        ),
+                      ],
+                    ).value,
                   ),
                 ),
               ],
@@ -88,13 +148,22 @@ class DiagContent extends StatelessWidget {
             height: 100,
             child: Wrap(
               runAlignment: WrapAlignment.center,
-              spacing: 95,
+              spacing: contactSpacer,
               children: [
                 Text(
                   'Still facing issues? \nWe are here to assist you.',
                   style: TextStyle(
                     color: Colors.black,
-                    fontSize: 14,
+                    fontSize: ResponsiveValue(
+                      context,
+                      defaultValue: 17.0,
+                      valueWhen: const [
+                        Condition.smallerThan(
+                          name: MOBILE,
+                          value: 14.0,
+                        ),
+                      ],
+                    ).value,
                   ),
                 ),
                 Container(
@@ -114,7 +183,16 @@ class DiagContent extends StatelessWidget {
                       'Contact Us',
                       style: TextStyle(
                           color: Colors.black,
-                          fontSize: 14,
+                          fontSize: ResponsiveValue(
+                            context,
+                            defaultValue: 17.0,
+                            valueWhen: const [
+                              Condition.smallerThan(
+                                name: MOBILE,
+                                value: 14.0,
+                              ),
+                            ],
+                          ).value,
                           fontWeight: FontWeight.bold),
                     ),
                     // On press send message to ker

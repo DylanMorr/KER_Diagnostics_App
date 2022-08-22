@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ker_diagnostics_app/screens/test.dart';
-import 'package:ker_diagnostics_app/utilities/sliver.dart';
+import 'package:ker_diagnostics_app/widgets/Diagnose%20Page/test.dart';
+import 'package:ker_diagnostics_app/widgets/Diagnose%20Page/diagSliver.dart';
 import 'package:ker_diagnostics_app/widgets/Diagnose%20Page/DiagContent.dart';
 import 'package:ker_diagnostics_app/widgets/Diagnose%20Page/DiagMenu.dart';
 import 'package:ker_diagnostics_app/widgets/Diagnose%20Page/diag_chat_bot.dart';

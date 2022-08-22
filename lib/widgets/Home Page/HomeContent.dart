@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ker_diagnostics_app/utilities/nav_bar.dart';
 import 'package:ker_diagnostics_app/widgets/Home%20Page/HomeScreenCard.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 class HomeContent extends StatefulWidget {
   @override
@@ -16,6 +17,8 @@ class _HomeContentState extends State<HomeContent> {
     // return a container with a list view
     return Container(
       child: ListView(
+        // turn off scroll physics
+        physics: NeverScrollableScrollPhysics(),
         // add paddings
         padding: EdgeInsets.fromLTRB(0.0, 72.0, 0.0, 32.0),
         children: <Widget>[
@@ -33,23 +36,65 @@ class _HomeContentState extends State<HomeContent> {
               children: [
                 Text(
                   'Diagnose Service',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: ResponsiveValue(
+                      context,
+                      defaultValue: 22.0,
+                      valueWhen: const [
+                        Condition.smallerThan(
+                          name: MOBILE,
+                          value: 18.0,
+                        ),
+                        Condition.largerThan(
+                          name: TABLET,
+                          value: 24.0,
+                        )
+                      ],
+                    ).value,
+                  ),
                 ),
                 SizedBox(height: 5),
                 Text(
                   'Use our tool to self-diagnose your vessel parts from anywhere yourself.',
                   style: TextStyle(
                     color: Colors.black,
-                    fontSize: 14,
+                    fontSize: ResponsiveValue(
+                      context,
+                      defaultValue: 18.0,
+                      valueWhen: const [
+                        Condition.smallerThan(
+                          name: MOBILE,
+                          value: 14.0,
+                        ),
+                        Condition.largerThan(
+                          name: TABLET,
+                          value: 20.0,
+                        )
+                      ],
+                    ).value,
                   ),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Container(
-                      margin: EdgeInsets.only(right: 15),
+                      margin: EdgeInsets.only(right: 15, top: 8),
                       height: 40,
-                      width: 150,
+                      width: ResponsiveValue(
+                        context,
+                        defaultValue: 160.0,
+                        valueWhen: const [
+                          Condition.smallerThan(
+                            name: MOBILE,
+                            value: 150.0,
+                          ),
+                          Condition.largerThan(
+                            name: TABLET,
+                            value: 170.0,
+                          )
+                        ],
+                      ).value,
                       // Setup box decoration for border control
                       decoration: BoxDecoration(
                         border: Border.all(color: Colors.black, width: 2),
@@ -63,7 +108,20 @@ class _HomeContentState extends State<HomeContent> {
                           'Summon the tool',
                           style: TextStyle(
                               color: Colors.black,
-                              fontSize: 14,
+                              fontSize: ResponsiveValue(
+                                context,
+                                defaultValue: 16.0,
+                                valueWhen: const [
+                                  Condition.smallerThan(
+                                    name: MOBILE,
+                                    value: 14.0,
+                                  ),
+                                  Condition.largerThan(
+                                    name: TABLET,
+                                    value: 18.0,
+                                  )
+                                ],
+                              ).value,
                               fontWeight: FontWeight.bold),
                         ),
                         // On press send message to ker
@@ -95,23 +153,65 @@ class _HomeContentState extends State<HomeContent> {
               children: [
                 Text(
                   'Customer Support',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: ResponsiveValue(
+                      context,
+                      defaultValue: 22.0,
+                      valueWhen: const [
+                        Condition.smallerThan(
+                          name: MOBILE,
+                          value: 18.0,
+                        ),
+                        Condition.largerThan(
+                          name: TABLET,
+                          value: 24.0,
+                        )
+                      ],
+                    ).value,
+                  ),
                 ),
                 SizedBox(height: 5),
                 Text(
                   'Not able to resolve your issue yet, no problem at all. We are available 24/7 to assist you.',
                   style: TextStyle(
                     color: Colors.black,
-                    fontSize: 14,
+                    fontSize: ResponsiveValue(
+                      context,
+                      defaultValue: 18.0,
+                      valueWhen: const [
+                        Condition.smallerThan(
+                          name: MOBILE,
+                          value: 14.0,
+                        ),
+                        Condition.largerThan(
+                          name: TABLET,
+                          value: 20.0,
+                        )
+                      ],
+                    ).value,
                   ),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Container(
-                      margin: EdgeInsets.only(right: 15),
+                      margin: EdgeInsets.only(right: 15, top: 8),
                       height: 40,
-                      width: 150,
+                      width: ResponsiveValue(
+                        context,
+                        defaultValue: 160.0,
+                        valueWhen: const [
+                          Condition.smallerThan(
+                            name: MOBILE,
+                            value: 150.0,
+                          ),
+                          Condition.largerThan(
+                            name: TABLET,
+                            value: 170.0,
+                          )
+                        ],
+                      ).value,
                       // Setup box decoration for border control
                       decoration: BoxDecoration(
                         border: Border.all(color: Colors.black, width: 2),
@@ -125,7 +225,20 @@ class _HomeContentState extends State<HomeContent> {
                           'Contact Us',
                           style: TextStyle(
                               color: Colors.black,
-                              fontSize: 14,
+                              fontSize: ResponsiveValue(
+                                context,
+                                defaultValue: 16.0,
+                                valueWhen: const [
+                                  Condition.smallerThan(
+                                    name: MOBILE,
+                                    value: 14.0,
+                                  ),
+                                  Condition.largerThan(
+                                    name: TABLET,
+                                    value: 18.0,
+                                  )
+                                ],
+                              ).value,
                               fontWeight: FontWeight.bold),
                         ),
                         // On press send message to ker
@@ -157,23 +270,65 @@ class _HomeContentState extends State<HomeContent> {
               children: [
                 Text(
                   'Your Account',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: ResponsiveValue(
+                      context,
+                      defaultValue: 22.0,
+                      valueWhen: const [
+                        Condition.smallerThan(
+                          name: MOBILE,
+                          value: 18.0,
+                        ),
+                        Condition.largerThan(
+                          name: TABLET,
+                          value: 24.0,
+                        )
+                      ],
+                    ).value,
+                  ),
                 ),
                 SizedBox(height: 5),
                 Text(
                   'Stay connected to the app to view your vessel drawings and other updates.',
                   style: TextStyle(
                     color: Colors.black,
-                    fontSize: 14,
+                    fontSize: ResponsiveValue(
+                      context,
+                      defaultValue: 18.0,
+                      valueWhen: const [
+                        Condition.smallerThan(
+                          name: MOBILE,
+                          value: 14.0,
+                        ),
+                        Condition.largerThan(
+                          name: TABLET,
+                          value: 20.0,
+                        )
+                      ],
+                    ).value,
                   ),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Container(
-                      margin: EdgeInsets.only(right: 15),
+                      margin: EdgeInsets.only(right: 15, top: 8),
                       height: 40,
-                      width: 150,
+                      width: ResponsiveValue(
+                        context,
+                        defaultValue: 160.0,
+                        valueWhen: const [
+                          Condition.smallerThan(
+                            name: MOBILE,
+                            value: 150.0,
+                          ),
+                          Condition.largerThan(
+                            name: TABLET,
+                            value: 170.0,
+                          )
+                        ],
+                      ).value,
                       // Setup box decoration for border control
                       decoration: BoxDecoration(
                         border: Border.all(color: Colors.black, width: 2),
@@ -187,7 +342,20 @@ class _HomeContentState extends State<HomeContent> {
                           'Take me there',
                           style: TextStyle(
                               color: Colors.black,
-                              fontSize: 14,
+                              fontSize: ResponsiveValue(
+                                context,
+                                defaultValue: 16.0,
+                                valueWhen: const [
+                                  Condition.smallerThan(
+                                    name: MOBILE,
+                                    value: 14.0,
+                                  ),
+                                  Condition.largerThan(
+                                    name: TABLET,
+                                    value: 18.0,
+                                  )
+                                ],
+                              ).value,
                               fontWeight: FontWeight.bold),
                         ),
                         // On press send message to ker
