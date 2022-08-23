@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:ker_diagnostics_app/utilities/nav_bar.dart';
+import 'package:ker_diagnostics_app/widgets/Contact%20Page/EnquiryForm.dart';
 import 'package:responsive_framework/responsive_framework.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class ContactContent extends StatefulWidget {
   @override
@@ -8,16 +9,6 @@ class ContactContent extends StatefulWidget {
 }
 
 class _ContactContentState extends State<ContactContent> {
-  // create a FormState key to identify form
-  final _key = GlobalKey<FormState>();
-
-  // create states to store name email and message from text fields
-  String name = '';
-  String email = '';
-  String message = '';
-  // create a error state for error messages
-  String error = '';
-
   @override
   Widget build(BuildContext context) {
     // Create a container to hold a ListView to display everything
@@ -29,175 +20,49 @@ class _ContactContentState extends State<ContactContent> {
               color: Colors.grey[300],
             ),
             width: double.infinity,
-            height: 120,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            height: ResponsiveValue(
+              context,
+              defaultValue: 170.0,
+              valueWhen: const [
+                Condition.smallerThan(
+                  name: MOBILE,
+                  value: 120.0,
+                ),
+              ],
+            ).value,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text(
-                  'Diagnose Service',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: ResponsiveValue(
-                      context,
-                      defaultValue: 22.0,
-                      valueWhen: const [
-                        Condition.smallerThan(
-                          name: MOBILE,
-                          value: 18.0,
-                        ),
-                        Condition.largerThan(
-                          name: TABLET,
-                          value: 24.0,
-                        )
-                      ],
-                    ).value,
-                  ),
-                ),
-                SizedBox(height: 5),
-                Text(
-                  'Use our tool to self-diagnose your vessel parts from anywhere yourself.',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: ResponsiveValue(
-                      context,
-                      defaultValue: 18.0,
-                      valueWhen: const [
-                        Condition.smallerThan(
-                          name: MOBILE,
-                          value: 14.0,
-                        ),
-                        Condition.largerThan(
-                          name: TABLET,
-                          value: 20.0,
-                        )
-                      ],
-                    ).value,
-                  ),
-                ),
-              ],
-            ),
-            padding: EdgeInsets.only(left: 30, top: 10),
-            margin: EdgeInsets.only(top: 30, bottom: 20),
-          ),
-          // Space out content
-          SizedBox(
-            height: ResponsiveValue(
-              context,
-              defaultValue: 80.0,
-              valueWhen: const [
-                Condition.smallerThan(
-                  name: MOBILE,
-                  value: 60.0,
-                ),
-                Condition.largerThan(
-                  name: TABLET,
-                  value: 90.0,
-                )
-              ],
-            ).value,
-          ),
-          // Create a container to hold the enquiry form
-          Container(
-            // Container sizing and padding
-            width: ResponsiveValue(
-              context,
-              defaultValue: 650.0,
-              valueWhen: const [
-                Condition.smallerThan(
-                  name: MOBILE,
-                  value: 400.0,
-                ),
-                Condition.largerThan(
-                  name: TABLET,
-                  value: 500.0,
-                )
-              ],
-            ).value,
-            height: ResponsiveValue(
-              context,
-              defaultValue: 400.0,
-              valueWhen: const [
-                Condition.smallerThan(
-                  name: MOBILE,
-                  value: 350.0,
-                ),
-                Condition.largerThan(
-                  name: TABLET,
-                  value: 500.0,
-                )
-              ],
-            ).value,
-            padding: EdgeInsets.all(10),
-            // Box decorator for border control
-            decoration: BoxDecoration(color: Colors.grey[300]),
-            // setup a child form for enquiring
-            child: Form(
-              // set key to global key _key
-              key: _key,
-              child: Column(
-                children: [
-                  // Space heading down slightly
-                  SizedBox(
-                    height: ResponsiveValue(
-                      context,
-                      defaultValue: 30.0,
-                      valueWhen: const [
-                        Condition.smallerThan(
-                          name: MOBILE,
-                          value: 20.0,
-                        ),
-                        Condition.largerThan(
-                          name: TABLET,
-                          value: 40.0,
-                        )
-                      ],
-                    ).value,
-                  ),
-                  // Heading text field
-                  Text(
-                    'Enquiry Form',
-                    textScaleFactor: ResponsiveValue(
-                      context,
-                      defaultValue: 1.8,
-                      valueWhen: const [
-                        Condition.smallerThan(
-                          name: MOBILE,
-                          value: 1.5,
-                        ),
-                        Condition.largerThan(
-                          name: TABLET,
-                          value: 2.0,
-                        )
-                      ],
-                    ).value,
-                    style: TextStyle(color: Colors.black),
-                  ),
-                  // Space out content
-                  SizedBox(
-                    height: ResponsiveValue(
-                      context,
-                      defaultValue: 30.0,
-                      valueWhen: const [
-                        Condition.smallerThan(
-                          name: MOBILE,
-                          value: 20.0,
-                        ),
-                        Condition.largerThan(
-                          name: TABLET,
-                          value: 40.0,
-                        )
-                      ],
-                    ).value,
-                  ),
-                  // Setup a row widget so that the name and email form can be side by side
-                  Row(
+                Expanded(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    mainAxisSize: MainAxisSize.min,
                     children: [
-                      // Setup an expanded ListTile to house the form field
-                      Expanded(
-                        child: ListTile(
-                          // Name Form field
-                          subtitle: TextFormField(
-                            style: TextStyle( 
+                      Text(
+                        'Corporate Office',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: ResponsiveValue(
+                            context,
+                            defaultValue: 24.0,
+                            valueWhen: const [
+                              Condition.smallerThan(
+                                name: MOBILE,
+                                value: 18.0,
+                              ),
+                            ],
+                          ).value,
+                        ),
+                      ),
+                      SizedBox(height: 5),
+                      Wrap(
+                        spacing: 5,
+                        children: [
+                          Icon(Icons.location_pin),
+                          Text(
+                            'St Catherines Road,\nKillybegs,\nCo.Donegal,\nIreland F94 XY45',
+                            style: TextStyle(
                               color: Colors.black,
                               fontSize: ResponsiveValue(
                                 context,
@@ -205,349 +70,352 @@ class _ContactContentState extends State<ContactContent> {
                                 valueWhen: const [
                                   Condition.smallerThan(
                                     name: MOBILE,
-                                    value: 16.0,
+                                    value: 14.0,
                                   ),
-                                  Condition.largerThan(
-                                    name: TABLET,
-                                    value: 22.0,
-                                  )
                                 ],
                               ).value,
                             ),
-                            // Setup input decoration for border control and hint text
-                            decoration: InputDecoration(
-                              border: UnderlineInputBorder(),
-                              enabledBorder: UnderlineInputBorder(
-                                borderSide:
-                                    BorderSide(color: Colors.white, width: 2),
-                              ),
-                              focusedBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                    color: Color.fromARGB(255, 255, 0, 0),
-                                    width: 2),
-                              ),
-                              hintText: 'Name',
-                              hintStyle: TextStyle(
-                                color: Colors.white70,
-                                fontSize: ResponsiveValue(
-                                  context,
-                                  defaultValue: 20.0,
-                                  valueWhen: const [
-                                    Condition.smallerThan(
-                                      name: MOBILE,
-                                      value: 16.0,
-                                    ),
-                                    Condition.largerThan(
-                                      name: TABLET,
-                                      value: 22.0,
-                                    )
-                                  ],
-                                ).value,
-                              ),
-                            ),
-                            // valid form by checking if empty - if empty return string if not empty return null
-                            validator: (value) =>
-                                value!.isEmpty ? 'Enter a Name' : null,
-                            // get value in field whenever it is changed
-                            onChanged: (value) {
-                              // set the state of name = value of text field
-                              setState(() {
-                                name = value;
-                              });
-                            },
                           ),
+                        ],
+                      )
+                    ],
+                  ),
+                ),
+                Flexible(
+                  fit: FlexFit.tight,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    //mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Container(
+                        child: Image.asset(
+                          'assets/images/kerSide.JPG',
+                          height: ResponsiveValue(
+                            context,
+                            defaultValue: 170.0,
+                            valueWhen: const [
+                              Condition.smallerThan(
+                                name: MOBILE,
+                                value: 120.0,
+                              ),
+                            ],
+                          ).value,
+                          //fit: BoxFit.contain,
                         ),
-                      ),
-                      // Space out content
-                      SizedBox(
-                        width: ResponsiveValue(
-                          context,
-                          defaultValue: 10.0,
-                          valueWhen: const [
-                            Condition.smallerThan(
-                              name: MOBILE,
-                              value: 5.0,
-                            ),
-                            Condition.largerThan(
-                              name: TABLET,
-                              value: 15.0,
-                            )
-                          ],
-                        ).value,
-                      ),
-                      // Setup an expanded ListTile to house the form field
-                      Expanded(
-                        child: ListTile(
-                          // Email form field
-                          subtitle: TextFormField(
+                      )
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            padding: EdgeInsets.only(left: 30),
+            margin: EdgeInsets.only(top: 24),
+          ),
+          // Space out content
+          SizedBox(
+            height: ResponsiveValue(
+              context,
+              defaultValue: 30.0,
+              valueWhen: const [
+                Condition.smallerThan(
+                  name: MOBILE,
+                  value: 24.0,
+                ),
+              ],
+            ).value,
+          ),
+          Container(
+            decoration: BoxDecoration(
+              color: Colors.grey[300],
+            ),
+            width: double.infinity,
+            height: ResponsiveValue(
+              context,
+              defaultValue: 170.0,
+              valueWhen: const [
+                Condition.smallerThan(
+                  name: MOBILE,
+                  value: 120.0,
+                ),
+              ],
+            ).value,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Expanded(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Wrap(
+                        spacing: 10,
+                        children: [
+                          Icon(
+                            Icons.language,
+                            color: Colors.blue,
+                            size: ResponsiveValue(
+                              context,
+                              defaultValue: 30.0,
+                              valueWhen: const [
+                                Condition.smallerThan(
+                                  name: MOBILE,
+                                  value: 25.0,
+                                ),
+                              ],
+                            ).value,
+                          ),
+                          Text(
+                            'https://www.ker.ie',
                             style: TextStyle(
-                              color: Colors.white,
+                              color: Colors.black,
                               fontSize: ResponsiveValue(
                                 context,
-                                defaultValue: 20.0,
+                                defaultValue: 22.0,
                                 valueWhen: const [
                                   Condition.smallerThan(
                                     name: MOBILE,
-                                    value: 16.0,
+                                    value: 18.0,
                                   ),
-                                  Condition.largerThan(
-                                    name: TABLET,
-                                    value: 22.0,
-                                  )
                                 ],
                               ).value,
                             ),
-                            // Setup input decoration for border control and hint text
-                            decoration: InputDecoration(
-                              border: UnderlineInputBorder(),
-                              enabledBorder: UnderlineInputBorder(
-                                borderSide:
-                                    BorderSide(color: Colors.white, width: 2),
-                              ),
-                              focusedBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                    color: Color.fromARGB(255, 255, 0, 0),
-                                    width: 2),
-                              ),
-                              hintText: 'Email',
-                              hintStyle: TextStyle(
-                                color: Colors.white70,
-                                fontSize: ResponsiveValue(
-                                  context,
-                                  defaultValue: 20.0,
-                                  valueWhen: const [
-                                    Condition.smallerThan(
-                                      name: MOBILE,
-                                      value: 16.0,
-                                    ),
-                                    Condition.largerThan(
-                                      name: TABLET,
-                                      value: 22.0,
-                                    )
-                                  ],
-                                ).value,
-                              ),
-                            ),
-                            // valid form by checking if empty - if empty return string if not empty return null
-                            validator: (value) =>
-                                value!.isEmpty ? 'Enter an Email' : null,
-                            // get value in field whenever it is changed
-                            onChanged: (value) {
-                              // set the state of name = value of text field
-                              setState(() {
-                                email = value;
-                              });
-                            },
                           ),
-                        ),
+                        ],
                       ),
+                      SizedBox(height: 7),
+                      Wrap(
+                        spacing: 10,
+                        children: [
+                          Icon(
+                            Icons.email_outlined,
+                            color: Colors.red,
+                            size: ResponsiveValue(
+                              context,
+                              defaultValue: 30.0,
+                              valueWhen: const [
+                                Condition.smallerThan(
+                                  name: MOBILE,
+                                  value: 25.0,
+                                ),
+                              ],
+                            ).value,
+                          ),
+                          Text(
+                            'info@ker.ie',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: ResponsiveValue(
+                                context,
+                                defaultValue: 22.0,
+                                valueWhen: const [
+                                  Condition.smallerThan(
+                                    name: MOBILE,
+                                    value: 18.0,
+                                  ),
+                                ],
+                              ).value,
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 7),
+                      Wrap(
+                        spacing: 10,
+                        children: [
+                          Icon(
+                            Icons.call,
+                            color: Colors.green,
+                            size: ResponsiveValue(
+                              context,
+                              defaultValue: 30.0,
+                              valueWhen: const [
+                                Condition.smallerThan(
+                                  name: MOBILE,
+                                  value: 25.0,
+                                ),
+                              ],
+                            ).value,
+                          ),
+                          Text(
+                            '+35374 973 1525',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: ResponsiveValue(
+                                context,
+                                defaultValue: 22.0,
+                                valueWhen: const [
+                                  Condition.smallerThan(
+                                    name: MOBILE,
+                                    value: 18.0,
+                                  ),
+                                ],
+                              ).value,
+                            ),
+                          ),
+                        ],
+                      )
                     ],
                   ),
-                  // Space out content
-                  SizedBox(
-                    height: ResponsiveValue(
-                      context,
-                      defaultValue: 30.0,
-                      valueWhen: const [
-                        Condition.smallerThan(
-                          name: MOBILE,
-                          value: 10.0,
-                        ),
-                        Condition.largerThan(
-                          name: TABLET,
-                          value: 40.0,
-                        )
-                      ],
-                    ).value,
-                  ),
-                  // Setup a ListTile for the last form field
-                  ListTile(
-                    // Message Form Field
-                    subtitle: TextFormField(
-                      // set the field to be a multiline so text is easier to read
-                      keyboardType: TextInputType.multiline,
-                      // max lines shown at one time is 3
-                      maxLines: 3,
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: ResponsiveValue(
-                          context,
-                          defaultValue: 20.0,
-                          valueWhen: const [
-                            Condition.smallerThan(
-                              name: MOBILE,
-                              value: 16.0,
+                ),
+              ],
+            ),
+            padding: EdgeInsets.only(left: 30),
+          ),
+          // Space out content
+          SizedBox(
+            height: ResponsiveValue(
+              context,
+              defaultValue: 30.0,
+              valueWhen: const [
+                Condition.smallerThan(
+                  name: MOBILE,
+                  value: 24.0,
+                ),
+              ],
+            ).value,
+          ),
+          EnquiryForm(),
+          // Space out content
+          SizedBox(
+            height: ResponsiveValue(
+              context,
+              defaultValue: 30.0,
+              valueWhen: const [
+                Condition.smallerThan(
+                  name: MOBILE,
+                  value: 24.0,
+                ),
+              ],
+            ).value,
+          ),
+          Container(
+            decoration: BoxDecoration(
+              color: Colors.grey[300],
+            ),
+            width: double.infinity,
+            height: 135,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Expanded(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Flexible(
+                            fit: FlexFit.tight,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Container(
+                                  child: Image.asset(
+                                    'assets/images/importantSign.JPG',
+                                    // 40 100
+                                    height: 60,
+                                    width: 140,
+                                  ),
+                                )
+                              ],
                             ),
-                            Condition.largerThan(
-                              name: TABLET,
-                              value: 22.0,
-                            )
-                          ],
-                        ).value,
+                          ),
+                        ],
                       ),
-                      // Setup input decoration for border control and hint text
-                      decoration: InputDecoration(
-                        border: UnderlineInputBorder(),
-                        enabledBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white, width: 2),
-                        ),
-                        focusedBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(
-                              color: Color.fromARGB(255, 255, 0, 0), width: 2),
-                        ),
-                        hintText: 'Message',
-                        hintStyle: TextStyle(
-                          color: Colors.white70,
+                      Text(
+                        'Please note that there is a chargable fee for the consultation service',
+                        style: TextStyle(
+                          color: Colors.black,
                           fontSize: ResponsiveValue(
                             context,
-                            defaultValue: 20.0,
+                            defaultValue: 22.0,
                             valueWhen: const [
                               Condition.smallerThan(
                                 name: MOBILE,
                                 value: 16.0,
                               ),
-                              Condition.largerThan(
-                                name: TABLET,
-                                value: 22.0,
-                              )
                             ],
                           ).value,
                         ),
                       ),
-                      // valid form by checking if empty - if empty return string if not empty return null
-                      validator: (value) =>
-                          value!.isEmpty ? 'Enter a Message' : null,
-                      // get value in field whenever it is changed
-                      onChanged: (value) {
-                        // set the state of name = value of text field
-                        setState(() {
-                          message = value;
-                        });
-                      },
-                    ),
-                  ),
-                  // text widget to display error message
-                  Text(
-                    error,
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 255, 0, 0),
-                      fontSize: ResponsiveValue(
-                        context,
-                        defaultValue: 16.0,
-                        valueWhen: const [
-                          Condition.smallerThan(
-                            name: MOBILE,
-                            value: 12.0,
+                      Wrap(
+                        spacing: 10,
+                        children: [
+                          Text(
+                            'Check the service charges in this menu:',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: ResponsiveValue(
+                                context,
+                                defaultValue: 22.0,
+                                valueWhen: const [
+                                  Condition.smallerThan(
+                                    name: MOBILE,
+                                    value: 16.0,
+                                  ),
+                                ],
+                              ).value,
+                            ),
                           ),
-                          Condition.largerThan(
-                            name: TABLET,
-                            value: 18.0,
-                          )
-                        ],
-                      ).value,
-                    ),
-                  ),
-                  // Space out content
-                  SizedBox(
-                    height: ResponsiveValue(
-                      context,
-                      defaultValue: 15.0,
-                      valueWhen: const [
-                        Condition.smallerThan(
-                          name: MOBILE,
-                          value: 20.0,
-                        ),
-                        Condition.largerThan(
-                          name: TABLET,
-                          value: 20.0,
-                        )
-                      ],
-                    ).value,
-                  ),
-                  // create container for the elevated button to submit form
-                  Container(
-                    height: ResponsiveValue(
-                      context,
-                      defaultValue: 50.0,
-                      valueWhen: const [
-                        Condition.smallerThan(
-                          name: MOBILE,
-                          value: 40.0,
-                        ),
-                        Condition.largerThan(
-                          name: TABLET,
-                          value: 60.0,
-                        )
-                      ],
-                    ).value,
-                    width: ResponsiveValue(
-                      context,
-                      defaultValue: 160.0,
-                      valueWhen: const [
-                        Condition.smallerThan(
-                          name: MOBILE,
-                          value: 150.0,
-                        ),
-                        Condition.largerThan(
-                          name: TABLET,
-                          value: 170.0,
-                        )
-                      ],
-                    ).value,
-                    // Setup box decoration for border control
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Colors.white, width: 2),
-                      borderRadius: BorderRadius.circular(6),
-                    ),
-                    // create the elevated button
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          primary: Color.fromARGB(255, 255, 0, 0)),
-                      // Set the child to be a text widget with purpose of button
-                      child: Text(
-                        'Send Message',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: ResponsiveValue(
-                            context,
-                            defaultValue: 18.0,
-                            valueWhen: const [
-                              Condition.smallerThan(
-                                name: MOBILE,
-                                value: 14.0,
+                          Container(
+                            margin: EdgeInsets.only(right: 9),
+                            height: 30,
+                            width: ResponsiveValue(
+                              context,
+                              defaultValue: 160.0,
+                              valueWhen: const [
+                                Condition.smallerThan(
+                                  name: MOBILE,
+                                  value: 139.0,
+                                ),
+                              ],
+                            ).value,
+                            // Setup box decoration for border control
+                            decoration: BoxDecoration(
+                              border: Border.all(color: Colors.black, width: 2),
+                              borderRadius: BorderRadius.circular(6),
+                            ),
+                            // create the elevated button
+                            child: ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                  primary: Colors.white),
+                              // Set the child to be a text widget with purpose of button
+                              child: Text(
+                                'Service Charges',
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: ResponsiveValue(
+                                      context,
+                                      defaultValue: 16.0,
+                                      valueWhen: const [
+                                        Condition.smallerThan(
+                                          name: MOBILE,
+                                          value: 14.0,
+                                        ),
+                                      ],
+                                    ).value,
+                                    fontWeight: FontWeight.bold),
                               ),
-                              Condition.largerThan(
-                                name: TABLET,
-                                value: 20.0,
-                              )
-                            ],
-                          ).value,
-                        ),
+                              // On press send message to ker
+                              onPressed: () {
+                                Navigator.pushNamed(context, '/Charges');
+                              },
+                            ),
+                          ),
+                        ],
                       ),
-                      // On press send message to ker
-                      onPressed: () async {
-                        // todo
-                      },
-                    ),
+                    ],
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
+            padding: EdgeInsets.only(left: 10),
           ),
         ],
       ),
     );
   }
-}
-
-_phoneWidge() {
-  TextButton(
-    style: ButtonStyle(
-      foregroundColor: MaterialStateProperty.all<Color>(Colors.blue),
-    ),
-    onPressed: () {
-      launch('+35374 973 1525');
-    },
-    child: Text('TextButton'),
-  );
 }

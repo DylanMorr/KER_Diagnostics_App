@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ker_diagnostics_app/screens/serviceCharges.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:ker_diagnostics_app/screens/account_page.dart';
 import 'package:ker_diagnostics_app/screens/contact_page.dart';
@@ -33,6 +34,18 @@ class MyApp extends StatelessWidget {
       title: 'KER APP',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        inputDecorationTheme: InputDecorationTheme(
+          border: const OutlineInputBorder(
+              borderSide: BorderSide(color: Colors.white)),
+          focusedBorder: const OutlineInputBorder(
+              borderSide: BorderSide(color: Colors.white)),
+          enabledBorder: const OutlineInputBorder(
+              borderSide: BorderSide(color: Colors.white)),
+          errorBorder: const OutlineInputBorder(
+              borderSide: BorderSide(color: Colors.white)),
+          focusedErrorBorder: const OutlineInputBorder(
+              borderSide: BorderSide(color: Colors.white)),
+        ),
       ),
       routes: <String, WidgetBuilder>{
         "/Home": ((context) => HomePage()),
@@ -40,6 +53,7 @@ class MyApp extends StatelessWidget {
         "/Contact": ((context) => ContactPage()),
         "/Account": ((context) => AccountPage()),
         "/BotScreen": ((context) => BotTest()),
+        "/Charges": ((context) => ServiceCharges()),
       },
       // Set home to BotNavBar
       home: BotNavBar(
