@@ -19,10 +19,6 @@ class HomeBackground extends StatelessWidget {
             name: MOBILE,
             value: 335.0,
           ),
-          Condition.largerThan(
-            name: TABLET,
-            value: 485.0,
-          )
         ],
       ).value,
       width: double.infinity,
@@ -39,10 +35,6 @@ class HomeBackground extends StatelessWidget {
                 name: MOBILE,
                 value: 335.0,
               ),
-              Condition.largerThan(
-                name: TABLET,
-                value: 485.0,
-              )
             ],
           ).value,
           // set autoplay to true and duration to 5 secs
@@ -69,10 +61,6 @@ class HomeBackground extends StatelessWidget {
                     name: MOBILE,
                     value: 335.0,
                   ),
-                  Condition.largerThan(
-                    name: TABLET,
-                    value: 485.0,
-                  )
                 ],
               ).value,
               width: double.infinity,

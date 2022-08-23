@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ker_diagnostics_app/utilities/nav_bar.dart';
 import 'package:ker_diagnostics_app/widgets/Contact%20Page/EnquiryForm.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 

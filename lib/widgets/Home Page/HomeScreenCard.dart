@@ -14,16 +14,12 @@ class AppSummary extends StatelessWidget {
           name: MOBILE,
           value: 170.0,
         ),
-        Condition.largerThan(
-          name: TABLET,
-          value: 300.0,
-        )
       ],
     ).value as double;
     // create a card content container
     final cardContent = Container(
       // set the margins
-      margin: EdgeInsets.fromLTRB(16.0, 15.0, 16.0, 16.0),
+      margin: EdgeInsets.fromLTRB(16.0, 28.0, 16.0, 16.0),
       // set the box constraint to expand
       constraints: BoxConstraints.expand(),
       // setup a column to display main card content
@@ -70,7 +66,7 @@ class AppSummary extends StatelessWidget {
           // set the child to the cardContent container
           child: cardContent,
           // set the height
-          height: 154.0,
+          height: 174.0,
           // set the margins
           margin: EdgeInsets.only(top: topMargin),
           // setup a box decoration for shape, border control and box shadow

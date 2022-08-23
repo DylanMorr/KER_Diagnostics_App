@@ -15,367 +15,317 @@ class _HomeContentState extends State<HomeContent> {
   @override
   Widget build(BuildContext context) {
     // return a container with a list view
-    return Container(
-      child: ListView(
-        // add paddings
-        padding: EdgeInsets.fromLTRB(0.0, 72.0, 0.0, 32.0),
-        children: <Widget>[
-          // Bring in the AppSummary widget
-          AppSummary(),
-          // create a container for all the text on the page
-          Container(
-            decoration: BoxDecoration(
-              color: Colors.grey[300],
-            ),
-            width: double.infinity,
-            height: 120,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Diagnose Service',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: ResponsiveValue(
-                      context,
-                      defaultValue: 22.0,
-                      valueWhen: const [
-                        Condition.smallerThan(
-                          name: MOBILE,
-                          value: 18.0,
-                        ),
-                        Condition.largerThan(
-                          name: TABLET,
-                          value: 24.0,
-                        )
-                      ],
-                    ).value,
-                  ),
-                ),
-                SizedBox(height: 5),
-                Text(
-                  'Use our tool to self-diagnose your vessel parts from anywhere yourself.',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: ResponsiveValue(
-                      context,
-                      defaultValue: 18.0,
-                      valueWhen: const [
-                        Condition.smallerThan(
-                          name: MOBILE,
-                          value: 14.0,
-                        ),
-                        Condition.largerThan(
-                          name: TABLET,
-                          value: 20.0,
-                        )
-                      ],
-                    ).value,
-                  ),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Container(
-                      margin: EdgeInsets.only(right: 15, top: 8),
-                      height: 40,
-                      width: ResponsiveValue(
-                        context,
-                        defaultValue: 160.0,
-                        valueWhen: const [
-                          Condition.smallerThan(
-                            name: MOBILE,
-                            value: 150.0,
-                          ),
-                          Condition.largerThan(
-                            name: TABLET,
-                            value: 170.0,
-                          )
-                        ],
-                      ).value,
-                      // Setup box decoration for border control
-                      decoration: BoxDecoration(
-                        border: Border.all(color: Colors.black, width: 2),
-                        borderRadius: BorderRadius.circular(6),
-                      ),
-                      // create the elevated button
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(primary: Colors.white),
-                        // Set the child to be a text widget with purpose of button
-                        child: Text(
-                          'Summon the tool',
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: ResponsiveValue(
-                                context,
-                                defaultValue: 16.0,
-                                valueWhen: const [
-                                  Condition.smallerThan(
-                                    name: MOBILE,
-                                    value: 14.0,
-                                  ),
-                                  Condition.largerThan(
-                                    name: TABLET,
-                                    value: 18.0,
-                                  )
-                                ],
-                              ).value,
-                              fontWeight: FontWeight.bold),
-                        ),
-                        // On press send message to ker
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => BotNavBar(
-                                        selectedIndex: 1,
-                                      )));
-                        },
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-            padding: EdgeInsets.only(left: 30, top: 10),
-            margin: EdgeInsets.only(top: 35, bottom: 20),
+    return ListView(
+      // add paddings
+      padding: EdgeInsets.fromLTRB(0.0, 72.0, 0.0, 32.0),
+      children: <Widget>[
+        // Bring in the AppSummary widget
+        AppSummary(),
+        // create a container for all the text on the page
+        Container(
+          decoration: BoxDecoration(
+            color: Colors.grey[300],
           ),
-          Container(
-            decoration: BoxDecoration(
-              color: Colors.grey[300],
-            ),
-            width: double.infinity,
-            height: 120,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Customer Support',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: ResponsiveValue(
+          width: double.infinity,
+          height: 120,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Diagnose Service',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: ResponsiveValue(
+                    context,
+                    defaultValue: 22.0,
+                    valueWhen: const [
+                      Condition.smallerThan(
+                        name: MOBILE,
+                        value: 18.0,
+                      ),
+                    ],
+                  ).value,
+                ),
+              ),
+              SizedBox(height: 5),
+              Text(
+                'Use our tool to self-diagnose your vessel parts from anywhere yourself.',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: ResponsiveValue(
+                    context,
+                    defaultValue: 18.0,
+                    valueWhen: const [
+                      Condition.smallerThan(
+                        name: MOBILE,
+                        value: 14.0,
+                      ),
+                    ],
+                  ).value,
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(right: 15, top: 8),
+                    height: 40,
+                    width: ResponsiveValue(
                       context,
-                      defaultValue: 22.0,
+                      defaultValue: 170.0,
                       valueWhen: const [
                         Condition.smallerThan(
                           name: MOBILE,
-                          value: 18.0,
+                          value: 160.0,
                         ),
-                        Condition.largerThan(
-                          name: TABLET,
-                          value: 24.0,
-                        )
                       ],
                     ).value,
-                  ),
-                ),
-                SizedBox(height: 5),
-                Text(
-                  'Not able to resolve your issue yet, no problem at all. We are available 24/7 to assist you.',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: ResponsiveValue(
-                      context,
-                      defaultValue: 18.0,
-                      valueWhen: const [
-                        Condition.smallerThan(
-                          name: MOBILE,
-                          value: 14.0,
-                        ),
-                        Condition.largerThan(
-                          name: TABLET,
-                          value: 20.0,
-                        )
-                      ],
-                    ).value,
-                  ),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Container(
-                      margin: EdgeInsets.only(right: 15, top: 8),
-                      height: 40,
-                      width: ResponsiveValue(
-                        context,
-                        defaultValue: 160.0,
-                        valueWhen: const [
-                          Condition.smallerThan(
-                            name: MOBILE,
-                            value: 150.0,
-                          ),
-                          Condition.largerThan(
-                            name: TABLET,
-                            value: 170.0,
-                          )
-                        ],
-                      ).value,
-                      // Setup box decoration for border control
-                      decoration: BoxDecoration(
-                        border: Border.all(color: Colors.black, width: 2),
-                        borderRadius: BorderRadius.circular(6),
-                      ),
-                      // create the elevated button
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(primary: Colors.white),
-                        // Set the child to be a text widget with purpose of button
-                        child: Text(
-                          'Contact Us',
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: ResponsiveValue(
-                                context,
-                                defaultValue: 16.0,
-                                valueWhen: const [
-                                  Condition.smallerThan(
-                                    name: MOBILE,
-                                    value: 14.0,
-                                  ),
-                                  Condition.largerThan(
-                                    name: TABLET,
-                                    value: 18.0,
-                                  )
-                                ],
-                              ).value,
-                              fontWeight: FontWeight.bold),
-                        ),
-                        // On press send message to ker
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => BotNavBar(
-                                        selectedIndex: 2,
-                                      )));
-                        },
-                      ),
+                    // Setup box decoration for border control
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.black, width: 2),
+                      borderRadius: BorderRadius.circular(6),
                     ),
-                  ],
-                ),
-              ],
-            ),
-            padding: EdgeInsets.only(left: 30, top: 10),
-            margin: EdgeInsets.only(bottom: 20),
-          ),
-          Container(
-            decoration: BoxDecoration(
-              color: Colors.grey[300],
-            ),
-            width: double.infinity,
-            height: 120,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Your Account',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: ResponsiveValue(
-                      context,
-                      defaultValue: 22.0,
-                      valueWhen: const [
-                        Condition.smallerThan(
-                          name: MOBILE,
-                          value: 18.0,
-                        ),
-                        Condition.largerThan(
-                          name: TABLET,
-                          value: 24.0,
-                        )
-                      ],
-                    ).value,
-                  ),
-                ),
-                SizedBox(height: 5),
-                Text(
-                  'Stay connected to the app to view your vessel drawings and other updates.',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: ResponsiveValue(
-                      context,
-                      defaultValue: 18.0,
-                      valueWhen: const [
-                        Condition.smallerThan(
-                          name: MOBILE,
-                          value: 14.0,
-                        ),
-                        Condition.largerThan(
-                          name: TABLET,
-                          value: 20.0,
-                        )
-                      ],
-                    ).value,
-                  ),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Container(
-                      margin: EdgeInsets.only(right: 15, top: 8),
-                      height: 40,
-                      width: ResponsiveValue(
-                        context,
-                        defaultValue: 160.0,
-                        valueWhen: const [
-                          Condition.smallerThan(
-                            name: MOBILE,
-                            value: 150.0,
-                          ),
-                          Condition.largerThan(
-                            name: TABLET,
-                            value: 170.0,
-                          )
-                        ],
-                      ).value,
-                      // Setup box decoration for border control
-                      decoration: BoxDecoration(
-                        border: Border.all(color: Colors.black, width: 2),
-                        borderRadius: BorderRadius.circular(6),
-                      ),
-                      // create the elevated button
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(primary: Colors.white),
-                        // Set the child to be a text widget with purpose of button
-                        child: Text(
-                          'Take me there',
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: ResponsiveValue(
-                                context,
-                                defaultValue: 16.0,
-                                valueWhen: const [
-                                  Condition.smallerThan(
-                                    name: MOBILE,
-                                    value: 14.0,
-                                  ),
-                                  Condition.largerThan(
-                                    name: TABLET,
-                                    value: 18.0,
-                                  )
-                                ],
-                              ).value,
-                              fontWeight: FontWeight.bold),
-                        ),
-                        // On press send message to ker
-                        onPressed: () {
-                          Navigator.push(
+                    // create the elevated button
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(primary: Colors.white),
+                      // Set the child to be a text widget with purpose of button
+                      child: Text(
+                        'Summon the tool',
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: ResponsiveValue(
                               context,
-                              MaterialPageRoute(
-                                  builder: (context) => BotNavBar(
-                                        selectedIndex: 3,
-                                      )));
-                        },
+                              defaultValue: 16.0,
+                              valueWhen: const [
+                                Condition.smallerThan(
+                                  name: MOBILE,
+                                  value: 14.0,
+                                ),
+                              ],
+                            ).value,
+                            fontWeight: FontWeight.bold),
                       ),
+                      // On press send message to ker
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => BotNavBar(
+                                      selectedIndex: 1,
+                                    )));
+                      },
                     ),
-                  ],
-                ),
-              ],
-            ),
-            padding: EdgeInsets.only(left: 30, top: 10),
-            margin: EdgeInsets.only(bottom: 20),
+                  ),
+                ],
+              ),
+            ],
           ),
-        ],
-      ),
+          padding: EdgeInsets.only(left: 30, top: 10),
+          margin: EdgeInsets.only(top: 35, bottom: 20),
+        ),
+        Container(
+          decoration: BoxDecoration(
+            color: Colors.grey[300],
+          ),
+          width: double.infinity,
+          height: 120,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Customer Support',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: ResponsiveValue(
+                    context,
+                    defaultValue: 22.0,
+                    valueWhen: const [
+                      Condition.smallerThan(
+                        name: MOBILE,
+                        value: 18.0,
+                      ),
+                    ],
+                  ).value,
+                ),
+              ),
+              SizedBox(height: 5),
+              Text(
+                'Not able to resolve your issue yet, no problem at all. We are available 24/7 to assist you.',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: ResponsiveValue(
+                    context,
+                    defaultValue: 18.0,
+                    valueWhen: const [
+                      Condition.smallerThan(
+                        name: MOBILE,
+                        value: 14.0,
+                      ),
+                    ],
+                  ).value,
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(right: 15, top: 8),
+                    height: 40,
+                    width: ResponsiveValue(
+                      context,
+                      defaultValue: 170.0,
+                      valueWhen: const [
+                        Condition.smallerThan(
+                          name: MOBILE,
+                          value: 160.0,
+                        ),
+                      ],
+                    ).value,
+                    // Setup box decoration for border control
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.black, width: 2),
+                      borderRadius: BorderRadius.circular(6),
+                    ),
+                    // create the elevated button
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(primary: Colors.white),
+                      // Set the child to be a text widget with purpose of button
+                      child: Text(
+                        'Contact Us',
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: ResponsiveValue(
+                              context,
+                              defaultValue: 16.0,
+                              valueWhen: const [
+                                Condition.smallerThan(
+                                  name: MOBILE,
+                                  value: 14.0,
+                                ),
+                              ],
+                            ).value,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      // On press send message to ker
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => BotNavBar(
+                                      selectedIndex: 2,
+                                    )));
+                      },
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+          padding: EdgeInsets.only(left: 30, top: 10),
+          margin: EdgeInsets.only(bottom: 20),
+        ),
+        Container(
+          decoration: BoxDecoration(
+            color: Colors.grey[300],
+          ),
+          width: double.infinity,
+          height: 120,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Your Account',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: ResponsiveValue(
+                    context,
+                    defaultValue: 22.0,
+                    valueWhen: const [
+                      Condition.smallerThan(
+                        name: MOBILE,
+                        value: 18.0,
+                      ),
+                    ],
+                  ).value,
+                ),
+              ),
+              SizedBox(height: 5),
+              Text(
+                'Stay connected to the app to view your vessel drawings and other updates.',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: ResponsiveValue(
+                    context,
+                    defaultValue: 18.0,
+                    valueWhen: const [
+                      Condition.smallerThan(
+                        name: MOBILE,
+                        value: 14.0,
+                      ),
+                    ],
+                  ).value,
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(right: 15, top: 8),
+                    height: 40,
+                    width: ResponsiveValue(
+                      context,
+                      defaultValue: 170.0,
+                      valueWhen: const [
+                        Condition.smallerThan(
+                          name: MOBILE,
+                          value: 160.0,
+                        ),
+                      ],
+                    ).value,
+                    // Setup box decoration for border control
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.black, width: 2),
+                      borderRadius: BorderRadius.circular(6),
+                    ),
+                    // create the elevated button
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(primary: Colors.white),
+                      // Set the child to be a text widget with purpose of button
+                      child: Text(
+                        'Take me there',
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: ResponsiveValue(
+                              context,
+                              defaultValue: 16.0,
+                              valueWhen: const [
+                                Condition.smallerThan(
+                                  name: MOBILE,
+                                  value: 14.0,
+                                ),
+                              ],
+                            ).value,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      // On press send message to ker
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => BotNavBar(
+                                      selectedIndex: 3,
+                                    )));
+                      },
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+          padding: EdgeInsets.only(left: 30, top: 10),
+          margin: EdgeInsets.only(bottom: 25),
+        ),
+      ],
     );
   }
 }

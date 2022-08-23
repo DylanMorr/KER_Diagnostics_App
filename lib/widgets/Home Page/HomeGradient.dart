@@ -15,10 +15,6 @@ class HomeGradient extends StatelessWidget {
           name: MOBILE,
           value: 235.0,
         ),
-        Condition.largerThan(
-          name: TABLET,
-          value: 390.0,
-        )
       ],
     ).value as double;
     // return a container
@@ -34,10 +30,6 @@ class HomeGradient extends StatelessWidget {
             name: MOBILE,
             value: 360.0,
           ),
-          Condition.largerThan(
-            name: TABLET,
-            value: 390.0,
-          )
         ],
       ).value,
       // use box decoration to add a linear gradient to the container

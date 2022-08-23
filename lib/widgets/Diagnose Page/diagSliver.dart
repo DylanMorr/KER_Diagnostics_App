@@ -29,6 +29,7 @@ class _SliverState extends State<Sliver> {
             backgroundColor: Colors.grey[300],
             title: Text(
               "Turn your " + device + " into a diagnostic device",
+              textAlign: TextAlign.left,
               style: TextStyle(
                 color: Colors.black,
                 fontSize: ResponsiveValue(
@@ -39,10 +40,6 @@ class _SliverState extends State<Sliver> {
                       name: MOBILE,
                       value: 20.0,
                     ),
-                    Condition.largerThan(
-                      name: TABLET,
-                      value: 24.0,
-                    )
                   ],
                 ).value,
               ),
@@ -52,6 +49,7 @@ class _SliverState extends State<Sliver> {
               titlePadding: EdgeInsets.only(left: 25, bottom: 45),
               title: Text(
                 '• Instant resolution \n• No other requirements',
+                textAlign: TextAlign.left,
                 style: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.normal,
@@ -63,10 +61,6 @@ class _SliverState extends State<Sliver> {
                         name: MOBILE,
                         value: 10.0,
                       ),
-                      Condition.largerThan(
-                        name: TABLET,
-                        value: 14.0,
-                      )
                     ],
                   ).value,
                 ),
@@ -88,10 +82,6 @@ class _SliverState extends State<Sliver> {
                             name: MOBILE,
                             value: 32.0,
                           ),
-                          Condition.largerThan(
-                            name: TABLET,
-                            value: 40.0,
-                          )
                         ],
                       ).value,
                       backgroundColor: Colors.white,

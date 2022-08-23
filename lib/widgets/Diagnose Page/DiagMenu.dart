@@ -403,37 +403,3 @@ botChatEvent(BuildContext context, String choice) {
   print(choice);
   Navigator.pushNamed(context, "/BotScreen");
 }
-
-// function to choose what aspect you have a problem with
-_menuChoice(String type) {
-  String choice = type;
-
-  switch (choice) {
-    case "cond":
-      print("You have chosen Condenser");
-      break;
-    case "cool":
-      print("You have chosen Cooler");
-      break;
-    case "tank":
-      print("You have chosen Tank");
-      break;
-    case "inv":
-      print("You have chosen inverter");
-      break;
-    case "panel":
-      print("You have chosen Panel");
-      break;
-    case "other":
-      print("You have chosen Other");
-      break;
-    case "comp":
-      print("You have chosen Compressor");
-      break;
-    case "circ":
-      print("You have chosen Circ Pump");
-      break;
-    default:
-      print("No Choice");
-  }
-}

@@ -51,10 +51,6 @@ class _BotNavBarState extends State<BotNavBar> {
           name: MOBILE,
           value: 15.0,
         ),
-        Condition.largerThan(
-          name: TABLET,
-          value: 70.0,
-        )
       ],
     ).value as double;
     double verPad = ResponsiveValue(
@@ -65,10 +61,6 @@ class _BotNavBarState extends State<BotNavBar> {
           name: MOBILE,
           value: 14.0,
         ),
-        Condition.largerThan(
-          name: TABLET,
-          value: 30.0,
-        )
       ],
     ).value as double;
     return Scaffold(
@@ -114,10 +106,6 @@ class _BotNavBarState extends State<BotNavBar> {
                       name: MOBILE,
                       value: 14.0,
                     ),
-                    Condition.largerThan(
-                      name: TABLET,
-                      value: 24.0,
-                    )
                   ],
                 ).value,
               ),
@@ -132,10 +120,6 @@ class _BotNavBarState extends State<BotNavBar> {
                     name: MOBILE,
                     value: 24.0,
                   ),
-                  Condition.largerThan(
-                    name: TABLET,
-                    value: 34.0,
-                  )
                 ],
               ).value,
               // Set the selected tab background to be blue
