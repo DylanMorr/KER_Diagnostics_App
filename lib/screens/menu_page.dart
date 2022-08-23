@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:ker_diagnostics_app/widgets/Account%20Page/account_content.dart';
+import 'package:ker_diagnostics_app/widgets/Menu%20Page/menu_content.dart';
 
-class AccountPage extends StatelessWidget {
-  const AccountPage({Key? key}) : super(key: key);
+class MenuPage extends StatelessWidget {
+  const MenuPage({Key? key}) : super(key: key);
 
   // Main page build return
   @override
@@ -10,11 +10,11 @@ class AccountPage extends StatelessWidget {
     return Scaffold(
       body: Container(
         constraints: const BoxConstraints.expand(),
-        color: const Color.fromARGB(255, 0, 0, 255),
+        color: const Color.fromARGB(255, 255, 255, 255),
         child: Stack(
           children: <Widget>[
-            // Return the AccountContent widget
-            AccountContent(),
+            // Return the MenuContent widget
+            MenuContent(),
           ],
         ),
       ),

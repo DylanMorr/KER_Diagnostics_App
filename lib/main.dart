@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ker_diagnostics_app/screens/serviceCharges.dart';
 import 'package:responsive_framework/responsive_framework.dart';
-import 'package:ker_diagnostics_app/screens/account_page.dart';
+import 'package:ker_diagnostics_app/screens/menu_page.dart';
 import 'package:ker_diagnostics_app/screens/contact_page.dart';
 import 'package:ker_diagnostics_app/screens/diagnostics_page.dart';
 import 'package:ker_diagnostics_app/screens/home_page.dart';
@@ -51,7 +51,7 @@ class MyApp extends StatelessWidget {
         "/Home": ((context) => HomePage()),
         "/Diagnose": ((context) => DiagnosticPage()),
         "/Contact": ((context) => ContactPage()),
-        "/Account": ((context) => AccountPage()),
+        "/Menu": ((context) => MenuPage()),
         "/BotScreen": ((context) => BotTest()),
         "/Charges": ((context) => ServiceCharges()),
       },
