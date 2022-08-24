@@ -18,7 +18,7 @@ class AppSummary extends StatelessWidget {
     // create a card content container
     final cardContent = Container(
       // set the margins
-      margin: EdgeInsets.fromLTRB(16.0, 28.0, 16.0, 16.0),
+      margin: EdgeInsets.fromLTRB(16.0, 28.0, 16.0, 12.0),
       // set the box constraint to expand
       constraints: BoxConstraints.expand(),
       // setup a column to display main card content
@@ -28,7 +28,7 @@ class AppSummary extends StatelessWidget {
         children: <Widget>[
           // create a container to hold the logo image
           Container(
-            padding: EdgeInsets.only(bottom: 12),
+            padding: EdgeInsets.only(bottom: 9),
             // use ClipRRect to add a border radius to the image
             child: ClipRRect(
               // add a border radius of 20 to only topleft and bottomright

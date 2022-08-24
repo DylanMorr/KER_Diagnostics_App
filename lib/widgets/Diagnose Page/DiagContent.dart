@@ -40,7 +40,7 @@ class DiagContent extends StatelessWidget {
             valueWhen: const [
               Condition.smallerThan(
                 name: MOBILE,
-                value: 555.0,
+                value: 540.0,
               ),
             ],
           ).value,

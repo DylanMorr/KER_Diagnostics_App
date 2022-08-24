@@ -33,7 +33,7 @@ class _MenuBuilderState extends State<MenuBuilder> {
     return Column(
       children: [
         SizedBox(
-          height: 167,
+          height: 185,
         ),
         Row(
           children: [

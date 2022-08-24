@@ -106,7 +106,7 @@ class _ContactContentState extends State<ContactContent> {
           ),
           // Space out content
           SizedBox(
-            height: MediaQuery.of(context).size.height / 50,
+            height: MediaQuery.of(context).size.height / 60,
             // height: ResponsiveValue(
             //   context,
             //   defaultValue: 30.0,
@@ -259,7 +259,7 @@ class _ContactContentState extends State<ContactContent> {
           ),
           // Space out content
           SizedBox(
-            height: MediaQuery.of(context).size.height / 50,
+            height: MediaQuery.of(context).size.height / 60,
           ),
 
           Testenq(),
@@ -267,7 +267,7 @@ class _ContactContentState extends State<ContactContent> {
 
           // Space out content
           SizedBox(
-            height: MediaQuery.of(context).size.height / 50,
+            height: MediaQuery.of(context).size.height / 60,
           ),
           Container(
             decoration: BoxDecoration(
@@ -337,7 +337,7 @@ class _ContactContentState extends State<ContactContent> {
                             valueWhen: const [
                               Condition.smallerThan(
                                 name: MOBILE,
-                                value: 139.0,
+                                value: 145.0,
                               ),
                             ],
                           ).value,
