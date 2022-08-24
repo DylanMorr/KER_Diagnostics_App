@@ -29,6 +29,7 @@ class DiagContent extends StatelessWidget {
     ).value as double;
     // return the content in a container with a list view
     return ListView(
+      physics: NeverScrollableScrollPhysics(),
       // set the padding
       padding: EdgeInsets.fromLTRB(0.0, 70.0, 0.0, 30.0),
       children: <Widget>[
