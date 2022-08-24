@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ker_diagnostics_app/utilities/text_styling.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 class AppSummary extends StatelessWidget {
@@ -8,7 +7,7 @@ class AppSummary extends StatelessWidget {
   Widget build(BuildContext context) {
     double topMargin = ResponsiveValue(
       context,
-      defaultValue: 280.0,
+      defaultValue: 305.0,
       valueWhen: const [
         Condition.smallerThan(
           name: MOBILE,
@@ -28,8 +27,8 @@ class AppSummary extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           // create a container to hold the logo image
-          Expanded(
-            flex: 4,
+          Container(
+            padding: EdgeInsets.only(bottom: 12),
             // use ClipRRect to add a border radius to the image
             child: ClipRRect(
               // add a border radius of 20 to only topleft and bottomright
@@ -39,18 +38,18 @@ class AppSummary extends StatelessWidget {
               // add the asset image of the ker logo
               child: Image.asset(
                 'assets/images/kerlogo.jpg',
-                fit: BoxFit.cover,
               ),
             ),
           ),
-          // Space out content
-          SizedBox(height: 10.0),
           // add welcome text to card
-          Text('Our business is to keep', style: Style.titleText),
-          // Space out content
-          SizedBox(height: 5.0),
-          // add more text for app name
-          Text('your business running smoothly', style: Style.titleText),
+          Text(
+            'Our business is to keep your business running smoothly',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+                color: Colors.white,
+                fontSize: 19.0,
+                fontWeight: FontWeight.w600),
+          ),
         ],
       ),
     );
@@ -63,12 +62,12 @@ class AppSummary extends StatelessWidget {
         // create the container
         child: Container(
           // set the width
-          width: 300,
+          width: 330,
           // set the child to the cardContent container
           child: cardContent,
           // set the height
-          height: MediaQuery.of(context).size.height / 5.5,
-          //height: 174.0,
+          //height: MediaQuery.of(context).size.height / 6,
+          height: 174.0,
           // set the margins
           margin: EdgeInsets.only(top: topMargin),
           // setup a box decoration for shape, border control and box shadow

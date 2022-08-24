@@ -14,10 +14,8 @@ class _HomeContentState extends State<HomeContent> {
   // home page main content build
   @override
   Widget build(BuildContext context) {
-    // return a container with a list view
-    return Column(
-      // add paddings
-      //padding: EdgeInsets.fromLTRB(0.0, 72.0, 0.0, 32.0),
+    return Wrap(
+      runSpacing: 20,
       children: <Widget>[
         // Bring in the AppSummary widget
         AppSummary(),
@@ -68,7 +66,7 @@ class _HomeContentState extends State<HomeContent> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Container(
-                    margin: EdgeInsets.only(right: 45, top: 8),
+                    margin: EdgeInsets.only(right: 45, top: 8.5),
                     height: 40,
                     width: ResponsiveValue(
                       context,
@@ -121,7 +119,6 @@ class _HomeContentState extends State<HomeContent> {
             ],
           ),
           padding: EdgeInsets.only(left: 30, top: 10),
-          margin: EdgeInsets.only(top: 35, bottom: 20),
         ),
         Container(
           decoration: BoxDecoration(
@@ -222,7 +219,6 @@ class _HomeContentState extends State<HomeContent> {
             ],
           ),
           padding: EdgeInsets.only(left: 30, top: 10),
-          margin: EdgeInsets.only(bottom: 20),
         ),
         Container(
           decoration: BoxDecoration(
@@ -323,7 +319,6 @@ class _HomeContentState extends State<HomeContent> {
             ],
           ),
           padding: EdgeInsets.only(left: 30, top: 10),
-          margin: EdgeInsets.only(bottom: 5),
         ),
       ],
     );
