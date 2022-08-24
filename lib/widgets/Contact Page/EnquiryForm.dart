@@ -26,7 +26,7 @@ class _EnquiryFormState extends State<EnquiryForm> {
         color: Colors.grey[300],
       ),
       width: double.infinity,
-      height: 390,
+      height: MediaQuery.of(context).size.height / 2.5,
       child: Wrap(
         alignment: WrapAlignment.center,
         spacing: 15,
@@ -263,7 +263,7 @@ class _EnquiryFormState extends State<EnquiryForm> {
                     ),
                     Container(
                       width: 245,
-                      height: 115,
+                      height: MediaQuery.of(context).size.height / 8,
                       child: // Setup a ListTile for the last form field
                           ListTile(
                         // Message Form Field
@@ -320,26 +320,28 @@ class _EnquiryFormState extends State<EnquiryForm> {
                 children: [
                   // create container for the elevated button to submit form
                   Container(
-                    height: ResponsiveValue(
-                      context,
-                      defaultValue: 30.0,
-                      valueWhen: const [
-                        Condition.smallerThan(
-                          name: MOBILE,
-                          value: 25.0,
-                        ),
-                      ],
-                    ).value,
-                    width: ResponsiveValue(
-                      context,
-                      defaultValue: 140.0,
-                      valueWhen: const [
-                        Condition.smallerThan(
-                          name: MOBILE,
-                          value: 120.0,
-                        ),
-                      ],
-                    ).value,
+                    height: MediaQuery.of(context).size.height / 40,
+                    // height: ResponsiveValue(
+                    //   context,
+                    //   defaultValue: 30.0,
+                    //   valueWhen: const [
+                    //     Condition.smallerThan(
+                    //       name: MOBILE,
+                    //       value: 25.0,
+                    //     ),
+                    //   ],
+                    // ).value,
+                    width: MediaQuery.of(context).size.width / 3.5,
+                    // width: ResponsiveValue(
+                    //   context,
+                    //   defaultValue: 140.0,
+                    //   valueWhen: const [
+                    //     Condition.smallerThan(
+                    //       name: MOBILE,
+                    //       value: 120.0,
+                    //     ),
+                    //   ],
+                    // ).value,
                     // create the elevated button
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
@@ -369,26 +371,28 @@ class _EnquiryFormState extends State<EnquiryForm> {
                   ),
                   // create container for the elevated button to submit form
                   Container(
-                    height: ResponsiveValue(
-                      context,
-                      defaultValue: 30.0,
-                      valueWhen: const [
-                        Condition.smallerThan(
-                          name: MOBILE,
-                          value: 25.0,
-                        ),
-                      ],
-                    ).value,
-                    width: ResponsiveValue(
-                      context,
-                      defaultValue: 140.0,
-                      valueWhen: const [
-                        Condition.smallerThan(
-                          name: MOBILE,
-                          value: 120.0,
-                        ),
-                      ],
-                    ).value,
+                    height: MediaQuery.of(context).size.height / 40,
+                    // height: ResponsiveValue(
+                    //   context,
+                    //   defaultValue: 30.0,
+                    //   valueWhen: const [
+                    //     Condition.smallerThan(
+                    //       name: MOBILE,
+                    //       value: 25.0,
+                    //     ),
+                    //   ],
+                    // ).value,
+                    width: MediaQuery.of(context).size.width / 3.5,
+                    // width: ResponsiveValue(
+                    //   context,
+                    //   defaultValue: 140.0,
+                    //   valueWhen: const [
+                    //     Condition.smallerThan(
+                    //       name: MOBILE,
+                    //       value: 120.0,
+                    //     ),
+                    //   ],
+                    // ).value,
                     // create the elevated button
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(

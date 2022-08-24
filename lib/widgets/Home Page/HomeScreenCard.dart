@@ -12,7 +12,7 @@ class AppSummary extends StatelessWidget {
       valueWhen: const [
         Condition.smallerThan(
           name: MOBILE,
-          value: 170.0,
+          value: 230.0,
         ),
       ],
     ).value as double;
@@ -28,7 +28,8 @@ class AppSummary extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           // create a container to hold the logo image
-          Container(
+          Expanded(
+            flex: 4,
             // use ClipRRect to add a border radius to the image
             child: ClipRRect(
               // add a border radius of 20 to only topleft and bottomright
@@ -38,7 +39,7 @@ class AppSummary extends StatelessWidget {
               // add the asset image of the ker logo
               child: Image.asset(
                 'assets/images/kerlogo.jpg',
-                height: 65,
+                fit: BoxFit.cover,
               ),
             ),
           ),
@@ -66,7 +67,8 @@ class AppSummary extends StatelessWidget {
           // set the child to the cardContent container
           child: cardContent,
           // set the height
-          height: 174.0,
+          height: MediaQuery.of(context).size.height / 5.5,
+          //height: 174.0,
           // set the margins
           margin: EdgeInsets.only(top: topMargin),
           // setup a box decoration for shape, border control and box shadow

@@ -4,27 +4,26 @@ import 'package:responsive_framework/responsive_framework.dart';
 
 class DiagContent extends StatelessWidget {
   const DiagContent({Key? key}) : super(key: key);
-
   // Main diagnostic page content build
   @override
   Widget build(BuildContext context) {
     double toolGuideSpacer = ResponsiveValue(
       context,
-      defaultValue: 506.0,
+      defaultValue: 474.0,
       valueWhen: const [
         Condition.smallerThan(
           name: MOBILE,
-          value: 170.0,
+          value: 160.0,
         ),
       ],
     ).value as double;
     double contactSpacer = ResponsiveValue(
       context,
-      defaultValue: 411.0,
+      defaultValue: 380.0,
       valueWhen: const [
         Condition.smallerThan(
           name: MOBILE,
-          value: 95.0,
+          value: 85.0,
         ),
       ],
     ).value as double;
@@ -50,7 +49,7 @@ class DiagContent extends StatelessWidget {
             color: Colors.grey[300],
           ),
           width: double.infinity,
-          height: 100,
+          height: MediaQuery.of(context).size.height / 11,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -74,7 +73,6 @@ class DiagContent extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(right: 15),
                     height: 40,
                     width: 150,
                     // Setup box decoration for border control
@@ -141,7 +139,7 @@ class DiagContent extends StatelessWidget {
             color: Colors.grey[300],
           ),
           width: double.infinity,
-          height: 100,
+          height: MediaQuery.of(context).size.height / 11,
           child: Wrap(
             runAlignment: WrapAlignment.center,
             spacing: contactSpacer,
@@ -163,7 +161,6 @@ class DiagContent extends StatelessWidget {
                 ),
               ),
               Container(
-                margin: EdgeInsets.only(right: 15),
                 height: 40,
                 width: 150,
                 // Setup box decoration for border control

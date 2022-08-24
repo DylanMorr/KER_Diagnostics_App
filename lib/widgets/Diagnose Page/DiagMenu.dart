@@ -33,7 +33,7 @@ class _MenuBuilderState extends State<MenuBuilder> {
     return Column(
       children: [
         SizedBox(
-          height: 187,
+          height: 167,
         ),
         Row(
           children: [
@@ -109,7 +109,7 @@ class _MenuBuilderState extends State<MenuBuilder> {
           ],
         ),
         SizedBox(
-          height: 20,
+          height: 15,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -189,7 +189,7 @@ class _MenuBuilderState extends State<MenuBuilder> {
           ],
         ),
         SizedBox(
-          height: 30,
+          height: 25,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -269,7 +269,7 @@ class _MenuBuilderState extends State<MenuBuilder> {
           ],
         ),
         SizedBox(
-          height: 30,
+          height: 25,
         ),
         Wrap(
           spacing: spacer,

@@ -19,16 +19,17 @@ class _ContactContentState extends State<ContactContent> {
               color: Colors.grey[300],
             ),
             width: double.infinity,
-            height: ResponsiveValue(
-              context,
-              defaultValue: 170.0,
-              valueWhen: const [
-                Condition.smallerThan(
-                  name: MOBILE,
-                  value: 120.0,
-                ),
-              ],
-            ).value,
+            height: MediaQuery.of(context).size.height / 8,
+            // height: ResponsiveValue(
+            //   context,
+            //   defaultValue: 170.0,
+            //   valueWhen: const [
+            //     Condition.smallerThan(
+            //       name: MOBILE,
+            //       value: 120.0,
+            //     ),
+            //   ],
+            // ).value,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -85,22 +86,13 @@ class _ContactContentState extends State<ContactContent> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
-                    //mainAxisSize: MainAxisSize.min,
+                    mainAxisSize: MainAxisSize.min,
                     children: [
                       Container(
                         child: Image.asset(
                           'assets/images/kerSide.JPG',
-                          height: ResponsiveValue(
-                            context,
-                            defaultValue: 170.0,
-                            valueWhen: const [
-                              Condition.smallerThan(
-                                name: MOBILE,
-                                value: 120.0,
-                              ),
-                            ],
-                          ).value,
-                          //fit: BoxFit.contain,
+                          height: MediaQuery.of(context).size.height / 8,
+                          fit: BoxFit.contain,
                         ),
                       )
                     ],
@@ -109,40 +101,43 @@ class _ContactContentState extends State<ContactContent> {
               ],
             ),
             padding: EdgeInsets.only(left: 30),
-            margin: EdgeInsets.only(top: 24),
+            margin: EdgeInsets.only(top: 20),
           ),
           // Space out content
           SizedBox(
-            height: ResponsiveValue(
-              context,
-              defaultValue: 30.0,
-              valueWhen: const [
-                Condition.smallerThan(
-                  name: MOBILE,
-                  value: 24.0,
-                ),
-              ],
-            ).value,
+            height: MediaQuery.of(context).size.height / 50,
+            // height: ResponsiveValue(
+            //   context,
+            //   defaultValue: 30.0,
+            //   valueWhen: const [
+            //     Condition.smallerThan(
+            //       name: MOBILE,
+            //       value: 24.0,
+            //     ),
+            //   ],
+            // ).value,
           ),
           Container(
             decoration: BoxDecoration(
               color: Colors.grey[300],
             ),
             width: double.infinity,
-            height: ResponsiveValue(
-              context,
-              defaultValue: 170.0,
-              valueWhen: const [
-                Condition.smallerThan(
-                  name: MOBILE,
-                  value: 120.0,
-                ),
-              ],
-            ).value,
+            height: MediaQuery.of(context).size.height / 8,
+            // height: ResponsiveValue(
+            //   context,
+            //   defaultValue: 170.0,
+            //   valueWhen: const [
+            //     Condition.smallerThan(
+            //       name: MOBILE,
+            //       value: 120.0,
+            //     ),
+            //   ],
+            // ).value,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Expanded(
+                  flex: 1,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -263,41 +258,44 @@ class _ContactContentState extends State<ContactContent> {
           ),
           // Space out content
           SizedBox(
-            height: ResponsiveValue(
-              context,
-              defaultValue: 30.0,
-              valueWhen: const [
-                Condition.smallerThan(
-                  name: MOBILE,
-                  value: 24.0,
-                ),
-              ],
-            ).value,
+            height: MediaQuery.of(context).size.height / 50,
+            // height: ResponsiveValue(
+            //   context,
+            //   defaultValue: 30.0,
+            //   valueWhen: const [
+            //     Condition.smallerThan(
+            //       name: MOBILE,
+            //       value: 24.0,
+            //     ),
+            //   ],
+            // ).value,
           ),
           EnquiryForm(),
           // Space out content
           SizedBox(
-            height: ResponsiveValue(
-              context,
-              defaultValue: 30.0,
-              valueWhen: const [
-                Condition.smallerThan(
-                  name: MOBILE,
-                  value: 24.0,
-                ),
-              ],
-            ).value,
+            height: MediaQuery.of(context).size.height / 50,
+            // height: ResponsiveValue(
+            //   context,
+            //   defaultValue: 30.0,
+            //   valueWhen: const [
+            //     Condition.smallerThan(
+            //       name: MOBILE,
+            //       value: 24.0,
+            //     ),
+            //   ],
+            // ).value,
           ),
           Container(
             decoration: BoxDecoration(
               color: Colors.grey[300],
             ),
             width: double.infinity,
-            height: 135,
+            height: MediaQuery.of(context).size.height / 7,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Expanded(
+                  flex: 1,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -314,9 +312,10 @@ class _ContactContentState extends State<ContactContent> {
                                 Container(
                                   child: Image.asset(
                                     'assets/images/importantSign.JPG',
-                                    // 40 100
-                                    height: 60,
-                                    width: 140,
+                                    height:
+                                        MediaQuery.of(context).size.height / 22,
+                                    width:
+                                        MediaQuery.of(context).size.width / 3.8,
                                   ),
                                 )
                               ],

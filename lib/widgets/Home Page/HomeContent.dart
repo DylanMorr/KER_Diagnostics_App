@@ -15,9 +15,9 @@ class _HomeContentState extends State<HomeContent> {
   @override
   Widget build(BuildContext context) {
     // return a container with a list view
-    return ListView(
+    return Column(
       // add paddings
-      padding: EdgeInsets.fromLTRB(0.0, 72.0, 0.0, 32.0),
+      //padding: EdgeInsets.fromLTRB(0.0, 72.0, 0.0, 32.0),
       children: <Widget>[
         // Bring in the AppSummary widget
         AppSummary(),
@@ -27,7 +27,7 @@ class _HomeContentState extends State<HomeContent> {
             color: Colors.grey[300],
           ),
           width: double.infinity,
-          height: 120,
+          height: MediaQuery.of(context).size.height / 8,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -68,7 +68,7 @@ class _HomeContentState extends State<HomeContent> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Container(
-                    margin: EdgeInsets.only(right: 15, top: 8),
+                    margin: EdgeInsets.only(right: 45, top: 8),
                     height: 40,
                     width: ResponsiveValue(
                       context,
@@ -128,7 +128,7 @@ class _HomeContentState extends State<HomeContent> {
             color: Colors.grey[300],
           ),
           width: double.infinity,
-          height: 120,
+          height: MediaQuery.of(context).size.height / 8,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -169,7 +169,7 @@ class _HomeContentState extends State<HomeContent> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Container(
-                    margin: EdgeInsets.only(right: 15, top: 8),
+                    margin: EdgeInsets.only(right: 45, top: 8),
                     height: 40,
                     width: ResponsiveValue(
                       context,
@@ -229,7 +229,7 @@ class _HomeContentState extends State<HomeContent> {
             color: Colors.grey[300],
           ),
           width: double.infinity,
-          height: 120,
+          height: MediaQuery.of(context).size.height / 8,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -270,7 +270,7 @@ class _HomeContentState extends State<HomeContent> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Container(
-                    margin: EdgeInsets.only(right: 15, top: 8),
+                    margin: EdgeInsets.only(right: 45, top: 8),
                     height: 40,
                     width: ResponsiveValue(
                       context,
@@ -323,7 +323,7 @@ class _HomeContentState extends State<HomeContent> {
             ],
           ),
           padding: EdgeInsets.only(left: 30, top: 10),
-          margin: EdgeInsets.only(bottom: 25),
+          margin: EdgeInsets.only(bottom: 5),
         ),
       ],
     );

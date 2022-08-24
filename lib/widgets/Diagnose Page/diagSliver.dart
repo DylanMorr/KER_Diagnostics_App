@@ -44,7 +44,7 @@ class _SliverState extends State<Sliver> {
                 ).value,
               ),
             ),
-            expandedHeight: 130.0,
+            expandedHeight: MediaQuery.of(context).size.height / 8,
             flexibleSpace: FlexibleSpaceBar(
               titlePadding: EdgeInsets.only(left: 25, bottom: 45),
               title: Text(
