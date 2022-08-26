@@ -21,16 +21,6 @@ class _ContactContentState extends State<ContactContent> {
             ),
             width: double.infinity,
             height: MediaQuery.of(context).size.height / 8,
-            // height: ResponsiveValue(
-            //   context,
-            //   defaultValue: 170.0,
-            //   valueWhen: const [
-            //     Condition.smallerThan(
-            //       name: MOBILE,
-            //       value: 120.0,
-            //     ),
-            //   ],
-            // ).value,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -107,16 +97,6 @@ class _ContactContentState extends State<ContactContent> {
           // Space out content
           SizedBox(
             height: MediaQuery.of(context).size.height / 60,
-            // height: ResponsiveValue(
-            //   context,
-            //   defaultValue: 30.0,
-            //   valueWhen: const [
-            //     Condition.smallerThan(
-            //       name: MOBILE,
-            //       value: 24.0,
-            //     ),
-            //   ],
-            // ).value,
           ),
           Container(
             decoration: BoxDecoration(
@@ -124,16 +104,6 @@ class _ContactContentState extends State<ContactContent> {
             ),
             width: double.infinity,
             height: MediaQuery.of(context).size.height / 8,
-            // height: ResponsiveValue(
-            //   context,
-            //   defaultValue: 170.0,
-            //   valueWhen: const [
-            //     Condition.smallerThan(
-            //       name: MOBILE,
-            //       value: 120.0,
-            //     ),
-            //   ],
-            // ).value,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -367,7 +337,7 @@ class _ContactContentState extends State<ContactContent> {
                                   ).value,
                                   fontWeight: FontWeight.bold),
                             ),
-                            // On press send message to ker
+                            // On press navigate to service charges
                             onPressed: () {
                               Navigator.pushNamed(context, '/Charges');
                             },

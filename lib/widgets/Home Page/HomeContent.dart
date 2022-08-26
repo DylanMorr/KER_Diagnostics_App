@@ -66,7 +66,7 @@ class _HomeContentState extends State<HomeContent> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Container(
-                    margin: EdgeInsets.only(right: 45, top: 8.5),
+                    margin: EdgeInsets.only(right: 45),
                     height: 40,
                     width: ResponsiveValue(
                       context,
@@ -166,7 +166,7 @@ class _HomeContentState extends State<HomeContent> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Container(
-                    margin: EdgeInsets.only(right: 45, top: 8),
+                    margin: EdgeInsets.only(right: 45),
                     height: 40,
                     width: ResponsiveValue(
                       context,
@@ -266,7 +266,7 @@ class _HomeContentState extends State<HomeContent> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Container(
-                    margin: EdgeInsets.only(right: 45, top: 8),
+                    margin: EdgeInsets.only(right: 45),
                     height: 40,
                     width: ResponsiveValue(
                       context,

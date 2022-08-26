@@ -50,7 +50,7 @@ class DiagContent extends StatelessWidget {
             color: Colors.grey[300],
           ),
           width: double.infinity,
-          height: MediaQuery.of(context).size.height / 11,
+          height: MediaQuery.of(context).size.height / 10,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -140,7 +140,7 @@ class DiagContent extends StatelessWidget {
             color: Colors.grey[300],
           ),
           width: double.infinity,
-          height: MediaQuery.of(context).size.height / 11,
+          height: MediaQuery.of(context).size.height / 10,
           child: Wrap(
             runAlignment: WrapAlignment.center,
             spacing: contactSpacer,
