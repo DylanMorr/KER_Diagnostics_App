@@ -9,6 +9,7 @@ class MessagesScreen extends StatefulWidget {
   State<MessagesScreen> createState() => _MessagesScreenState();
 }
 
+// class setup for messages between bot and user
 class _MessagesScreenState extends State<MessagesScreen> {
   @override
   Widget build(BuildContext context) {

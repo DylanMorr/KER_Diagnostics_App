@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:ker_diagnostics_app/widgets/Diagnose%20Page/DiagMenu.dart';
-import 'package:ker_diagnostics_app/widgets/Diagnose%20Page/diagSliver.dart';
-import 'package:ker_diagnostics_app/widgets/Diagnose%20Page/DiagContent.dart';
+import 'package:ker_diagnostics_app/widgets/Diagnose%20Page/diag_menu.dart';
+import 'package:ker_diagnostics_app/widgets/Diagnose%20Page/diag_sliver.dart';
+import 'package:ker_diagnostics_app/widgets/Diagnose%20Page/diag_content.dart';
 
 class DiagnosticPage extends StatelessWidget {
   const DiagnosticPage({Key? key}) : super(key: key);
@@ -16,8 +16,6 @@ class DiagnosticPage extends StatelessWidget {
         child: Stack(
           // Return both the Content and the Menu widget
           children: <Widget>[Sliver(), DiagContent(), DiagnosticMenu()],
-          //children: <Widget>[BotTest()],
-          //children: <Widget>[DiagBot()],
         ),
       ),
     );

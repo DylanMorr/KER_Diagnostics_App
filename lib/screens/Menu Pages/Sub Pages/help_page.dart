@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ker_diagnostics_app/widgets/Menu%20Page/headingBar.dart';
+import 'package:ker_diagnostics_app/widgets/Menu%20Page/heading_bar.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 class HelpPage extends StatefulWidget {

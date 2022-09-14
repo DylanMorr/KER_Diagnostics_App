@@ -1,25 +1,33 @@
 import 'package:flutter/material.dart';
-import 'package:ker_diagnostics_app/screens/Contact%20Pages/serviceCharges.dart';
+import 'package:flutter/services.dart';
+import 'package:ker_diagnostics_app/screens/Contact%20Pages/service_charges.dart';
+import 'package:ker_diagnostics_app/screens/Diagnostic%20Pages/user_guide_page.dart';
+import 'package:ker_diagnostics_app/screens/Entry%20Pages/register_page.dart';
+import 'package:ker_diagnostics_app/screens/Entry%20Pages/sign_in_page.dart';
+import 'package:ker_diagnostics_app/screens/Entry%20Pages/welcome_page.dart';
 import 'package:ker_diagnostics_app/screens/Menu%20Pages/Sub%20Pages/about_page.dart';
 import 'package:ker_diagnostics_app/screens/Menu%20Pages/Sub%20Pages/faqs_page.dart';
 import 'package:ker_diagnostics_app/screens/Menu%20Pages/Sub%20Pages/help_page.dart';
 import 'package:ker_diagnostics_app/screens/Menu%20Pages/Sub%20Pages/issues_feedback_page.dart';
 import 'package:ker_diagnostics_app/screens/Menu%20Pages/Sub%20Pages/my_profile_page.dart';
 import 'package:ker_diagnostics_app/screens/Menu%20Pages/Sub%20Pages/privacy_page.dart';
-import 'package:ker_diagnostics_app/screens/Menu%20Pages/Sub%20Pages/rate_page.dart';
-import 'package:ker_diagnostics_app/screens/Menu%20Pages/Sub%20Pages/security_page.dart';
 import 'package:ker_diagnostics_app/screens/Menu%20Pages/Sub%20Pages/share_page.dart';
 import 'package:ker_diagnostics_app/screens/Menu%20Pages/Sub%20Pages/terms_conds_page.dart';
+import 'package:ker_diagnostics_app/widgets/Diagnose%20Page/kommunicate_bot.dart';
+import 'package:ker_diagnostics_app/widgets/Diagnostic%20Dialog/Compressor%20Dialog/comp_dialog.dart';
+import 'package:ker_diagnostics_app/widgets/testing_dialogs.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:ker_diagnostics_app/screens/Menu%20Pages/menu_page.dart';
 import 'package:ker_diagnostics_app/screens/Contact%20Pages/contact_page.dart';
 import 'package:ker_diagnostics_app/screens/Diagnostic%20Pages/diagnostics_page.dart';
 import 'package:ker_diagnostics_app/screens/Home%20Pages/home_page.dart';
 import 'package:ker_diagnostics_app/utilities/nav_bar.dart';
-import 'package:ker_diagnostics_app/widgets/testbot.dart';
+import 'package:ker_diagnostics_app/widgets/Diagnose%20Page/diag_flow_bot.dart';
 
 void main() {
   runApp(const MyApp());
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
+      overlays: [SystemUiOverlay.top]);
 }
 
 class MyApp extends StatelessWidget {
@@ -60,23 +68,27 @@ class MyApp extends StatelessWidget {
         "/Diagnose": ((context) => DiagnosticPage()),
         "/Contact": ((context) => ContactPage()),
         "/Menu": ((context) => MenuPage()),
-        "/BotScreen": ((context) => BotTest()),
+        "/BotScreen": ((context) => DiagBot()),
         "/Charges": ((context) => ServiceCharges()),
         "/Profile": ((context) => MyProfilePage()),
         "/Privacy": ((context) => PrivacyPage()),
         "/About": ((context) => AboutPage()),
         "/Help": ((context) => HelpPage()),
         "/TermsConds": ((context) => TermsCondsPage()),
-        "/Security": ((context) => SecurityPage()),
         "/IssuesFeed": ((context) => IssuesFeedbackPage()),
         "/Faqs": ((context) => FaqsPage()),
-        "/Rate": ((context) => RatePage()),
         "/Share": ((context) => SharePage()),
+        "/Guide": ((context) => UserGuide()),
+        "/Welcome": ((context) => WelcomePage()),
+        "/SignIn": ((context) => SignInPage()),
+        "/Register": ((context) => RegisterPage()),
       },
       // Set home to BotNavBar
-      home: BotNavBar(
-        selectedIndex: 0,
-      ),
+      // home: BotNavBar(
+      //  selectedIndex: 0,
+      // ),
+      //home: TestDiags(),
+      home: WelcomePage(),
     );
   }
 }

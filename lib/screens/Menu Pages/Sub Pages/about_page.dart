@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ker_diagnostics_app/widgets/Menu%20Page/headingBar.dart';
+import 'package:ker_diagnostics_app/widgets/Menu%20Page/Sub%20Page%20Widgets/About%20Page/about_content.dart';
+import 'package:ker_diagnostics_app/widgets/Menu%20Page/heading_bar.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 class AboutPage extends StatefulWidget {
@@ -23,6 +24,10 @@ class _AboutPageState extends State<AboutPage> {
       body: Column(
         children: [
           HeadingBar(icon: Icons.info, title: "About the App"),
+          SizedBox(
+            height: 150,
+          ),
+          AboutContent(),
         ],
       ),
     );

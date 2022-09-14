@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ker_diagnostics_app/widgets/Contact%20Page/ContactContent.dart';
+import 'package:ker_diagnostics_app/widgets/Contact%20Page/contact_content.dart';
 
 class ContactPage extends StatefulWidget {
   @override

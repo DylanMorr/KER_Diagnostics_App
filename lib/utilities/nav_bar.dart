@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:ker_diagnostics_app/screens/Menu%20Pages/menu_page.dart';
 import 'package:ker_diagnostics_app/screens/Contact%20Pages/contact_page.dart';
@@ -23,8 +22,6 @@ class _BotNavBarState extends State<BotNavBar> {
     super.initState();
     // set the selected index to 0 so starting page is HomePage
     _selectedIndex = widget.selectedIndex;
-    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
-        overlays: [SystemUiOverlay.top]);
   }
 
   // Create a list of pages to navigate through

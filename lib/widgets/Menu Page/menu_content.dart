@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_framework.dart';
+import 'package:share_plus/share_plus.dart';
+import 'package:rating_dialog/rating_dialog.dart';
+import 'package:store_redirect/store_redirect.dart';
 
 class MenuContent extends StatelessWidget {
   const MenuContent({Key? key}) : super(key: key);
@@ -15,14 +18,13 @@ class MenuContent extends StatelessWidget {
         _buildMenu(context, "about", Icons.info, "About the App"),
         _buildMenu(context, "help", Icons.help, "Help"),
         _buildMenu(context, "tandc", Icons.description, "Terms and Conditions"),
-        _buildMenu(context, "sec", Icons.security, "Security"),
         _buildMenu(context, "issues", Icons.chat, "Report Issues & Feedback"),
         _buildMenu(context, "faqs", Icons.question_answer, "FAQs"),
         _buildMenu(context, "rate", Icons.star_rate, "Rate Us"),
         _buildMenu(context, "share", Icons.share, "Share the App"),
         Column(
           children: [
-            SizedBox(height: 20),
+            SizedBox(height: 30),
             Container(
               height: 40,
               width: ResponsiveValue(
@@ -59,6 +61,7 @@ class MenuContent extends StatelessWidget {
                 // On press send message to ker
                 onPressed: () {
                   print("Logged out");
+                  Navigator.pushNamed(context, '/Welcome');
                 },
               ),
             ),
@@ -70,12 +73,53 @@ class MenuContent extends StatelessWidget {
 }
 
 _buildMenu(BuildContext context, String choice, IconData icon, String title) {
+  final String _content =
+      'Replace this with link to the app store page with app';
+
+  void _shareContent() {
+    Share.share(_content);
+  }
+
+  final _dialog = RatingDialog(
+    // your app's name?
+    title: Text('Rate Us On App Store'),
+    // encourage your user to leave a high rating?
+    message: Text('Select Number of Stars 1 - 5 to Rate This App'),
+    // your app's logo?
+    image: Image.asset('assets/images/kerlogo.jpg', height: 50),
+    submitButtonText: 'Submit',
+    onCancelled: () => print('cancelled'),
+    onSubmitted: (response) {
+      print('rating: ${response.rating}, comment: ${response.comment}');
+      if (response.rating < 3.0) {
+        // send their comments to your email or anywhere you wish
+        // ask the user to contact you instead of leaving a bad review
+      } else {
+        //go to app store
+        StoreRedirect.redirect(
+            // add in android app store id and ios app store id here
+            androidAppId: '',
+            iOSAppId: '');
+      }
+    },
+  );
+
   // Create a container inside a Gesture Detector
   // This allows us to capture whenever the container is tapped and take us to the Share the App page
   return GestureDetector(
     onTap: () {
-      print(choice + " Dectection");
-      _menuNavigator(context, choice);
+      if (choice == "share") {
+        _shareContent();
+      } else if (choice == "rate") {
+        // load dialog to show it
+        showDialog(
+          context: context,
+          builder: (context) => _dialog,
+        );
+      } else {
+        print(choice + " Dectection");
+        _menuNavigator(context, choice);
+      }
     },
     child: Container(
       decoration: BoxDecoration(
@@ -205,18 +249,6 @@ _menuNavigator(BuildContext context, String choice) {
     case 'faqs':
       {
         Navigator.pushNamed(context, '/Faqs');
-      }
-      break;
-
-    case 'rate':
-      {
-        Navigator.pushNamed(context, '/Rate');
-      }
-      break;
-
-    case 'share':
-      {
-        Navigator.pushNamed(context, '/Share');
       }
       break;
 

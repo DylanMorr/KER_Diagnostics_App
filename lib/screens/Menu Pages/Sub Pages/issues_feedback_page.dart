@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ker_diagnostics_app/widgets/Menu%20Page/headingBar.dart';
+import 'package:ker_diagnostics_app/widgets/Menu%20Page/Sub%20Page%20Widgets/Issues%20Feedback%20Page/issues_feedback_content.dart';
+import 'package:ker_diagnostics_app/widgets/Menu%20Page/heading_bar.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 class IssuesFeedbackPage extends StatefulWidget {
@@ -20,9 +21,9 @@ class _IssuesFeedbackPageState extends State<IssuesFeedbackPage> {
         iconTheme: IconThemeData(color: Colors.black, size: 40),
         foregroundColor: Colors.black,
       ),
-      body: Column(
+      body: Stack(
         children: [
-          HeadingBar(icon: Icons.chat, title: "Report Issues & Feedback"),
+          IssuesContent(),
         ],
       ),
     );
