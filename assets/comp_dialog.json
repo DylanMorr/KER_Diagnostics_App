@@ -1,0 +1,74 @@
+[
+    {
+        "id" : 0,
+        "type" : "High Amps",
+        "causes" : "• Too much load from high water temp (should fix itself)\n• Fault in motor - won't come down itself",
+        "fixes" : "• Will fix itself by limitation\n• Check or replace motor"
+    },
+    {
+        "id" : 1,
+        "type" : "Capacity",
+        "causes" : "• Faulty capacity solenoid coils\n• Limitation stopping capacity increase",
+        "fixes" : "• Replace capacity solenoid coils\n• Check for limitations on screen"
+    },
+    {
+        "id" : 2,
+        "type" : "High Discharge Pressure",
+        "causes" : "• Lack of water flow through condenser\n• Condenser pump inverter not controlling speed properly or condenser valve is not controlling properly",
+        "fixes" : "• Check the sea inlet valve and strainer is open. Check that condenser pump is running when discharge pressure is high. Check for pump airlock. Check Condenser valve operation\n• Have PID settings in PLC and inverter settings checked. Check Condenser Valve\n• Reset this alarm on high pressure switch by pushing green button, then reset on touchscreen alarm page\n• Check Pressures history page"
+    },
+    {
+        "id" : 3,
+        "type" : "Low Suction Pressure",
+        "causes" : "• Poor water  flow across cooler\n• System low in gas\n• Expansion valves are not regulating superheat correctly\n• Expansion valve coils have become faulty\n• Cooler is partially frozen",
+        "fixes" : "• Check water strainer. Increase circ pump speed. Reset alarm on touchscreen alarm page\n• Check gas level on screen and at pilot receiver, if the system is low it must be leak checked and topped up\n• Check settings and expansion valve strainers\n• Replace expansion valve coils, check pressures history page\n• Flush cooler to thaw out"
+    },
+    {
+        "id" : 4,
+        "type" : "High Suction Temp",
+        "causes" : "• Not enough liquid entering the cooler\n• Blocked liquid line strainers\n• Burned out coils in expansion valve",
+        "fixes" : "• Clean the liquid line strainers\n• Check expansion valve may need to replace coils"
+    },
+    {
+        "id" : 5,
+        "type" : "Low Suction Temp",
+        "causes" : "• Too much liquid entering cooler\n• Poor circulation flow",
+        "fixes" : "• Check expansion valve is not jammed open\n• Check sea water strainers\n• Check cooler is not frozen"
+    },
+    {
+        "id" : 6,
+        "type" : "High Discharge Temp",
+        "causes" : "• Liquid injection not working properly\n• Low ammonia liquid level in pilot receiver",
+        "fixes" : "• Check solenoids on liquid injection line\n• Check gas level in system\n• Check Temp history screen"
+    },
+    {
+        "id" : 7,
+        "type" : "Low Discharge Temp",
+        "causes" : "• Discharge temp is not warm enough. Liquid injection could be stuck on or not working properly\n• Cooler partially frozen",
+        "fixes" : "• Check liquid injection solenoid. Check discharge temp sensor\n• Thaw cooler by flushing with higher temp water"
+    },
+    {
+        "id" : 8,
+        "type" : "Low Oil Pressure",
+        "causes" : "• Compressor oil receiver low level\n• Compressor oil cold\n• Dirty Oil Filter",
+        "fixes" : "• Check level in oil receiver sight glass. Top up if necessary\n• Feel compressor oil sump, it should be warm. If not check oil heater\n• Check oil filter differential pressure\n• Replace oil Filter and oil. Refer to Howden manual\n• Check pressures history screen. "
+    },
+    {
+        "id" : 9,
+        "type" : "High Oil Temp",
+        "causes" : "• Compressor cooling is not operating properly",
+        "fixes" : "• Clean cooling valves and strainers"
+    },
+    {
+        "id" : 10,
+        "type" : "Low Oil Temp",
+        "causes" : "• Compressor cooling is not operating properly",
+        "fixes" : "• Clean cooling valves and strainers"
+    },
+    {
+        "id" : 11,
+        "type" : "Thermal Alarm",
+        "causes" : "• Compressor motor windings have got too hot\n• This alarm shows on inverter.",
+        "fixes" : "• Check compressor motor\n• Check motor amps"
+    }
+]

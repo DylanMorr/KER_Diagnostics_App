@@ -1,19 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ker_diagnostics_app/widgets/Diagnostic%20Dialog/buttonBuilder.dart';
 
-class InverterDialog extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: ElevatedButton(
-          onPressed: () {
-            openInverterDialog(context);
-          },
-          child: Text('Test Inverter')),
-    );
-  }
-}
-
 void openInverterDialog(BuildContext context) {
   // Create a AlertDialog.
   AlertDialog dialog = AlertDialog(
@@ -53,7 +40,7 @@ void openInverterDialog(BuildContext context) {
                         color: Colors.white, fontWeight: FontWeight.bold),
                   ),
                   onPressed: () {
-                    Navigator.of(context).pop();
+                    Navigator.of(context).pop("Exited");
                   },
                   child: Text('Back'),
                 ),

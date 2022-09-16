@@ -1,19 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ker_diagnostics_app/widgets/Diagnostic%20Dialog/buttonBuilder.dart';
 
-class TankDialog extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: ElevatedButton(
-          onPressed: () {
-            openTankDialog(context);
-          },
-          child: Text('Test Tank')),
-    );
-  }
-}
-
 void openTankDialog(BuildContext context) {
   // Create a AlertDialog.
   AlertDialog dialog = AlertDialog(
@@ -53,7 +40,7 @@ void openTankDialog(BuildContext context) {
                         color: Colors.white, fontWeight: FontWeight.bold),
                   ),
                   onPressed: () {
-                    Navigator.of(context).pop();
+                    Navigator.of(context).pop("Exited");
                   },
                   child: Text('Back'),
                 ),
@@ -85,7 +72,8 @@ void openTankDialog(BuildContext context) {
             Wrap(
               spacing: 20,
               children: [
-                ButtonBuilder(title: "Tank Levels", choice: "tank_levels", section: 5),
+                ButtonBuilder(
+                    title: "Tank Levels", choice: "tank_levels", section: 5),
                 ButtonBuilder(
                     title: "Tank Temps", choice: "tank_temps", section: 5),
               ],

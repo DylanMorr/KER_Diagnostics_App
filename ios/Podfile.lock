@@ -1,0 +1,67 @@
+PODS:
+  - Flutter (1.0.0)
+  - Kingfisher (7.0.0)
+  - Kommunicate (6.7.2):
+    - KommunicateChatUI-iOS-SDK (~> 0.2.5)
+  - kommunicate_flutter (0.0.1):
+    - Flutter
+    - Kommunicate (~> 6.7.1)
+  - KommunicateChatUI-iOS-SDK (0.2.5):
+    - KommunicateChatUI-iOS-SDK/Complete (= 0.2.5)
+  - KommunicateChatUI-iOS-SDK/Complete (0.2.5):
+    - Kingfisher (~> 7.0.0)
+    - KommunicateChatUI-iOS-SDK/RichMessageKit
+    - KommunicateCore-iOS-SDK (~> 1.0.4)
+    - SwipeCellKit (~> 2.7.1)
+  - KommunicateChatUI-iOS-SDK/RichMessageKit (0.2.5)
+  - KommunicateCore-iOS-SDK (1.0.4)
+  - share_plus (0.0.1):
+    - Flutter
+  - store_redirect (0.0.1):
+    - Flutter
+  - SwipeCellKit (2.7.1)
+  - url_launcher_ios (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - kommunicate_flutter (from `.symlinks/plugins/kommunicate_flutter/ios`)
+  - share_plus (from `.symlinks/plugins/share_plus/ios`)
+  - store_redirect (from `.symlinks/plugins/store_redirect/ios`)
+  - url_launcher_ios (from `.symlinks/plugins/url_launcher_ios/ios`)
+
+SPEC REPOS:
+  trunk:
+    - Kingfisher
+    - Kommunicate
+    - KommunicateChatUI-iOS-SDK
+    - KommunicateCore-iOS-SDK
+    - SwipeCellKit
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  kommunicate_flutter:
+    :path: ".symlinks/plugins/kommunicate_flutter/ios"
+  share_plus:
+    :path: ".symlinks/plugins/share_plus/ios"
+  store_redirect:
+    :path: ".symlinks/plugins/store_redirect/ios"
+  url_launcher_ios:
+    :path: ".symlinks/plugins/url_launcher_ios/ios"
+
+SPEC CHECKSUMS:
+  Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
+  Kingfisher: 5efc54fec3980f92354898532e562cc17f31efb4
+  Kommunicate: cdfea5297f1e5c26c4720d0a335ea034f78474ce
+  kommunicate_flutter: ae0ce6f9f31b0b04b2c6b2154c48d324f81b6045
+  KommunicateChatUI-iOS-SDK: 2507026e4630067caea09a1d36404a3fa3c146b7
+  KommunicateCore-iOS-SDK: f4cbf5ee3a11f869d7effaff4270823bb1336991
+  share_plus: 056a1e8ac890df3e33cb503afffaf1e9b4fbae68
+  store_redirect: 2977747cf81689a39bd62c248c2deacb7a0d131e
+  SwipeCellKit: 3972254a826da74609926daf59b08d6c72e619ea
+  url_launcher_ios: 839c58cdb4279282219f5e248c3321761ff3c4de
+
+PODFILE CHECKSUM: cae996b781a9f8c90f2029f5480abb3b517cd2af
+
+COCOAPODS: 1.11.3
