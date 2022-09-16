@@ -14,15 +14,12 @@ import 'package:ker_diagnostics_app/screens/Menu%20Pages/Sub%20Pages/privacy_pag
 import 'package:ker_diagnostics_app/screens/Menu%20Pages/Sub%20Pages/share_page.dart';
 import 'package:ker_diagnostics_app/screens/Menu%20Pages/Sub%20Pages/terms_conds_page.dart';
 import 'package:ker_diagnostics_app/widgets/Diagnose%20Page/kommunicate_bot.dart';
-import 'package:ker_diagnostics_app/widgets/Diagnostic%20Dialog/Compressor%20Dialog/comp_dialog.dart';
-import 'package:ker_diagnostics_app/widgets/testing_dialogs.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:ker_diagnostics_app/screens/Menu%20Pages/menu_page.dart';
 import 'package:ker_diagnostics_app/screens/Contact%20Pages/contact_page.dart';
 import 'package:ker_diagnostics_app/screens/Diagnostic%20Pages/diagnostics_page.dart';
 import 'package:ker_diagnostics_app/screens/Home%20Pages/home_page.dart';
 import 'package:ker_diagnostics_app/utilities/nav_bar.dart';
-import 'package:ker_diagnostics_app/widgets/Diagnose%20Page/diag_flow_bot.dart';
 
 void main() {
   runApp(const MyApp());
@@ -87,7 +84,6 @@ class MyApp extends StatelessWidget {
       // home: BotNavBar(
       //  selectedIndex: 0,
       // ),
-      //home: TestDiags(),
       home: WelcomePage(),
     );
   }

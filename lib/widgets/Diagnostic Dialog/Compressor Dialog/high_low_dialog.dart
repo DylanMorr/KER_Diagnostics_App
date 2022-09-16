@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:ker_diagnostics_app/widgets/Diagnostic%20Dialog/buttonBuilder.dart';
 
-void openPanelDialog(BuildContext context) {
+void openHighLowDialog(BuildContext context, String choice, String type) {
+  String secondaryText = "You have selected " +
+      choice +
+      ".\nIs the temperature reading High or Low?";
   // Create a AlertDialog.
   AlertDialog dialog = AlertDialog(
     insetPadding: EdgeInsets.all(10),
@@ -18,31 +21,11 @@ void openPanelDialog(BuildContext context) {
             spacing: 150,
             children: [
               Text(
-                "Panel Issue",
+                "Compressor Issue",
                 textAlign: TextAlign.start,
                 style: TextStyle(
                   fontSize: 22.0,
                   fontWeight: FontWeight.bold,
-                ),
-              ),
-              SizedBox(
-                width: 65,
-                height: 25,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    elevation: 0,
-                    primary: Color.fromARGB(255, 255, 0, 0),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(0),
-                      side: BorderSide(width: 2.5, color: Colors.black),
-                    ),
-                    textStyle: TextStyle(
-                        color: Colors.white, fontWeight: FontWeight.bold),
-                  ),
-                  onPressed: () {
-                    Navigator.of(context).pop("Exited");
-                  },
-                  child: Text('Back'),
                 ),
               ),
             ],
@@ -58,7 +41,7 @@ void openPanelDialog(BuildContext context) {
         width: 420,
         padding: EdgeInsets.only(bottom: 40, left: 10, top: 4),
         child: Text(
-          "Which of the following options best describes your problem?",
+          secondaryText,
           style: TextStyle(fontSize: 17.0, fontWeight: FontWeight.bold),
         ),
       ),
@@ -73,15 +56,10 @@ void openPanelDialog(BuildContext context) {
               spacing: 20,
               children: [
                 ButtonBuilder(
-                    title: "Dark Touch Screen",
-                    choice: "dark_touch_screen",
-                    section: 6),
-                ButtonBuilder(
-                    title: "No Power", choice: "no_power", section: 6),
+                    title: "High", choice: "high_" + type, section: 8),
+                ButtonBuilder(title: "Low", choice: "low_" + type, section: 8),
               ],
             ),
-            ButtonBuilder(
-                title: "E-Stop Active", choice: "e_stop_active", section: 6),
           ],
         ),
       ),

@@ -2,6 +2,12 @@ import 'package:dialog_flowtter/dialog_flowtter.dart';
 import 'package:flutter/material.dart';
 import 'package:ker_diagnostics_app/screens/Diagnostic%20Pages/messages.dart';
 
+/* 
+*
+*   This is not being used now but i left this code in in case you want ot revert to dialog flow bot
+*
+*/
+
 class BotTest extends StatefulWidget {
   const BotTest({Key? key}) : super(key: key);
 

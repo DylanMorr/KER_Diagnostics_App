@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:kommunicate_flutter/kommunicate_flutter.dart';
 
+/*
+*
+*   This is not being used but i left it in incase you want to use kommunicate bots
+*
+*/
+
+
 class DiagBot extends StatelessWidget {
   const DiagBot({Key? key}) : super(key: key);
 

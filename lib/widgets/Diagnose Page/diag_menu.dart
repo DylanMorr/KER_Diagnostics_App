@@ -1,5 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:ker_diagnostics_app/widgets/Diagnostic%20Dialog/Circ%20Pump%20Dialog/circ_pump_dialog.dart';
 import 'package:ker_diagnostics_app/widgets/Diagnostic%20Dialog/Compressor%20Dialog/comp_dialog.dart';
+import 'package:ker_diagnostics_app/widgets/Diagnostic%20Dialog/Condenser%20Dialog/condenser_dialog.dart';
+import 'package:ker_diagnostics_app/widgets/Diagnostic%20Dialog/Cooler%20Dialog/cooler_dialog.dart';
+import 'package:ker_diagnostics_app/widgets/Diagnostic%20Dialog/Inverter%20Dialog/inverter_dialog.dart';
+import 'package:ker_diagnostics_app/widgets/Diagnostic%20Dialog/Mixed%20Dialog/mixed_dialog.dart';
+import 'package:ker_diagnostics_app/widgets/Diagnostic%20Dialog/Panel%20Dialog/panel_dialog.dart';
+import 'package:ker_diagnostics_app/widgets/Diagnostic%20Dialog/Tank%20Dialog/tank_dialog.dart';
 import 'package:kommunicate_flutter/kommunicate_flutter.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
@@ -302,12 +309,12 @@ class _MenuBuilderState extends State<MenuBuilder> {
             ),
             Column(
               children: [
-                _buildButton("assets/images/rsw_plant.jpg", 65, "other"),
+                _buildButton("assets/images/rsw_plant.jpg", 65, "mixed"),
                 SizedBox(
                   height: 10,
                 ),
                 Text(
-                  'Other',
+                  'Mixed',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: ResponsiveValue(
@@ -394,20 +401,6 @@ class _MenuBuilderState extends State<MenuBuilder> {
             backgroundColor: Color.fromARGB(255, 255, 255, 255),
             // on pressed call menu choice function and pass in choice
             onPressed: () => {onPressEvent(context, choice)},
-            // onPressed: () async {
-            //   try {
-            //     dynamic conversationObject = {
-            //       'appId':
-            //           '2e02d1f8b8f5dd2a567cbefd916241c26', // The [APP_ID](https://dashboard.kommunicate.io/settings/install) obtained from kommunicate dashboard.
-            //     };
-            //     dynamic result =
-            //         await KommunicateFlutterPlugin.buildConversation(
-            //             conversationObject);
-            //     print("Conversation builder success: " + result.toString());
-            //   } on Exception catch (e) {
-            //     print("Conversation builder error : " + e.toString());
-            //   }
-            // },
           ),
         ),
       ],
@@ -416,14 +409,59 @@ class _MenuBuilderState extends State<MenuBuilder> {
 }
 
 onPressEvent(BuildContext context, String choice) {
-  print("This is here and this is the choice: " + choice);
-  //Navigator.pushNamed(context, "/BotScreen");
-
+  print("choice: " + choice);
   switch (choice) {
     case "comp":
       {
         openCompDialog(context);
       }
       break;
+
+    case "circ":
+      {
+        openCircPumpDialog(context);
+      }
+      break;
+
+    case "cond":
+      {
+        openCondenserDialog(context);
+      }
+      break;
+
+    case "cool":
+      {
+        openCoolerDialog(context);
+      }
+      break;
+
+    case "tank":
+      {
+        openTankDialog(context);
+      }
+      break;
+
+    case "inv":
+      {
+        openInverterDialog(context);
+      }
+      break;
+
+    case "panel":
+      {
+        openPanelDialog(context);
+      }
+      break;
+
+    case "mixed":
+      {
+        openMixedDialog(context);
+      }
+      break;
+
+    default:
+      {
+        print("failed");
+      }
   }
 }
